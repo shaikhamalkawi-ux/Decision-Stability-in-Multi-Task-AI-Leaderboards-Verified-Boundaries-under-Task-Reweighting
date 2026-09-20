@@ -1,0 +1,2 @@
+quantity,python_value,matlab_value,absolute_difference,tolerance,status,notes
+all requested LP cross-check quantities,,,,5e-8,NOT_RUN_LICENSE_EXPIRED,"MATLAB R2024a license checkout failed before execution; see MATLAB_CROSSCHECK.csv."

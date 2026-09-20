@@ -1,0 +1,2 @@
+implementation,version,command,status,result,error_code,notes
+MATLAB,R2024a,"matlab -batch independent_lp_crosscheck",NOT_RUN_LICENSE_EXPIRED,not executed,"License Manager Error -10","MATLAB could not start because the installed license had expired; no scientific value was inferred."
