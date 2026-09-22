@@ -1,0 +1,12 @@
+candidate,lower_exact,upper_exact,lower,upper,pairwise_upper_relaxation_exact,upper_certificate,upper_witness,lower_witness,can_be_unique_nominal_winner
+LR (tuned + ensemble),0,0,0.0,0.0,0,pairwise upper bound attained by shared completion,completion_00_upper_feasible_rank.csv,completion_00_lower_rank.csv,False
+RF (tuned + ensemble),0,0,0.0,0.0,0,pairwise upper bound attained by shared completion,completion_01_upper_feasible_rank.csv,completion_01_lower_rank.csv,False
+XT (tuned + ensemble),0,0,0.0,0.0,0,pairwise upper bound attained by shared completion,completion_02_upper_feasible_rank.csv,completion_02_lower_rank.csv,False
+CAT (tuned + ensemble),0,0,0.0,0.0,0,pairwise upper bound attained by shared completion,completion_03_upper_feasible_rank.csv,completion_03_lower_rank.csv,False
+GBM (tuned + ensemble),0,0,0.0,0.0,0,pairwise upper bound attained by shared completion,completion_04_upper_feasible_rank.csv,completion_04_lower_rank.csv,False
+XGB (tuned + ensemble),0,0,0.0,0.0,0,pairwise upper bound attained by shared completion,completion_05_upper_feasible_rank.csv,completion_05_lower_rank.csv,False
+TA-REALMLP (tuned + ensemble),0,55/2414,0.0,0.022783761391880698,69/2698,exact integer DP plus endpoint witness,realmlp_joint_best_rank.csv,completion_06_lower_rank.csv,True
+TA-TABM (tuned + ensemble),0,0,0.0,0.0,0,pairwise upper bound attained by shared completion,completion_07_upper_feasible_rank.csv,completion_07_lower_rank.csv,False
+TA-TABDPT (default),0,0,0.0,0.0,0,pairwise upper bound attained by shared completion,completion_08_upper_feasible_rank.csv,completion_08_lower_rank.csv,False
+TA-TABPFN-2.6 (default),0,96/1207,0.0,0.07953603976801989,96/1207,pairwise upper bound attained by shared completion,completion_09_upper_feasible_rank.csv,completion_09_lower_rank.csv,True
+TA-TABICLv2 (default),0,0,0.0,0.0,0,pairwise upper bound attained by shared completion,completion_10_upper_feasible_rank.csv,completion_10_lower_rank.csv,False

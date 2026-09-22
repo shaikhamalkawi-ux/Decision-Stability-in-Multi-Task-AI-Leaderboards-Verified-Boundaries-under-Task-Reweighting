@@ -1,0 +1,12 @@
+candidate,complete_case_radius_exact,lower_radius_exact,lower_radius,upper_feasible_exact,upper_feasible,upper_relaxation_exact,upper_relaxation,sharp_upper,lower_binding,upper_construction_rival,lower_nominal_winner,upper_nominal_winner
+LR (tuned + ensemble),0,0,0.0,0,0.0,0,0.0,True,RF (tuned + ensemble),RF (tuned + ensemble),TA-TABPFN-2.6 (default),TA-TABPFN-2.6 (default)
+RF (tuned + ensemble),0,0,0.0,0,0.0,0,0.0,True,XT (tuned + ensemble),LR (tuned + ensemble),TA-TABPFN-2.6 (default),TA-TABPFN-2.6 (default)
+XT (tuned + ensemble),0,0,0.0,0,0.0,0,0.0,True,CAT (tuned + ensemble),LR (tuned + ensemble),TA-TABPFN-2.6 (default),TA-TABPFN-2.6 (default)
+CAT (tuned + ensemble),0,0,0.0,0,0.0,0,0.0,True,TA-REALMLP (tuned + ensemble),LR (tuned + ensemble),TA-TABPFN-2.6 (default),TA-TABPFN-2.6 (default)
+GBM (tuned + ensemble),0,0,0.0,0,0.0,0,0.0,True,CAT (tuned + ensemble),LR (tuned + ensemble),TA-TABPFN-2.6 (default),TA-TABPFN-2.6 (default)
+XGB (tuned + ensemble),0,0,0.0,0,0.0,0,0.0,True,CAT (tuned + ensemble),LR (tuned + ensemble),TA-TABPFN-2.6 (default),TA-TABPFN-2.6 (default)
+TA-REALMLP (tuned + ensemble),0,0,0.0,49/2414,0.020298260149130075,69/2698,0.02557449962935508,False,TA-TABPFN-2.6 (default),TA-TABPFN-2.6 (default),TA-TABPFN-2.6 (default),TA-REALMLP (tuned + ensemble)
+TA-TABM (tuned + ensemble),0,0,0.0,0,0.0,0,0.0,True,CAT (tuned + ensemble),LR (tuned + ensemble),TA-TABPFN-2.6 (default),TA-TABPFN-2.6 (default)
+TA-TABDPT (default),0,0,0.0,0,0.0,0,0.0,True,CAT (tuned + ensemble),LR (tuned + ensemble),TA-TABPFN-2.6 (default),TA-TABPFN-2.6 (default)
+TA-TABPFN-2.6 (default),41/2196,0,0.0,96/1207,0.07953603976801989,96/1207,0.07953603976801989,True,TA-REALMLP (tuned + ensemble),LR (tuned + ensemble),TA-REALMLP (tuned + ensemble),TA-TABPFN-2.6 (default)
+TA-TABICLv2 (default),0,0,0.0,0,0.0,0,0.0,True,TA-REALMLP (tuned + ensemble),LR (tuned + ensemble),TA-TABPFN-2.6 (default),TA-TABPFN-2.6 (default)

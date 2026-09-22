@@ -1,0 +1,111 @@
+candidate,rival,lower_pairwise_exact,upper_pairwise_exact
+LR (tuned + ensemble),RF (tuned + ensemble),0,0
+LR (tuned + ensemble),XT (tuned + ensemble),0,0
+LR (tuned + ensemble),CAT (tuned + ensemble),0,0
+LR (tuned + ensemble),GBM (tuned + ensemble),0,0
+LR (tuned + ensemble),XGB (tuned + ensemble),0,0
+LR (tuned + ensemble),TA-REALMLP (tuned + ensemble),0,0
+LR (tuned + ensemble),TA-TABM (tuned + ensemble),0,0
+LR (tuned + ensemble),TA-TABDPT (default),0,0
+LR (tuned + ensemble),TA-TABPFN-2.6 (default),0,0
+LR (tuned + ensemble),TA-TABICLv2 (default),0,0
+RF (tuned + ensemble),LR (tuned + ensemble),67/2698,49/1207
+RF (tuned + ensemble),XT (tuned + ensemble),0,0
+RF (tuned + ensemble),CAT (tuned + ensemble),0,0
+RF (tuned + ensemble),GBM (tuned + ensemble),0,0
+RF (tuned + ensemble),XGB (tuned + ensemble),0,0
+RF (tuned + ensemble),TA-REALMLP (tuned + ensemble),0,0
+RF (tuned + ensemble),TA-TABM (tuned + ensemble),0,0
+RF (tuned + ensemble),TA-TABDPT (default),0,0
+RF (tuned + ensemble),TA-TABPFN-2.6 (default),0,0
+RF (tuned + ensemble),TA-TABICLv2 (default),0,0
+XT (tuned + ensemble),LR (tuned + ensemble),155/1988,97/994
+XT (tuned + ensemble),RF (tuned + ensemble),17/497,27/497
+XT (tuned + ensemble),CAT (tuned + ensemble),0,0
+XT (tuned + ensemble),GBM (tuned + ensemble),0,0
+XT (tuned + ensemble),XGB (tuned + ensemble),0,0
+XT (tuned + ensemble),TA-REALMLP (tuned + ensemble),0,0
+XT (tuned + ensemble),TA-TABM (tuned + ensemble),0,0
+XT (tuned + ensemble),TA-TABDPT (default),0,0
+XT (tuned + ensemble),TA-TABPFN-2.6 (default),0,0
+XT (tuned + ensemble),TA-TABICLv2 (default),0,0
+CAT (tuned + ensemble),LR (tuned + ensemble),235/994,491/1988
+CAT (tuned + ensemble),RF (tuned + ensemble),192/781,37/142
+CAT (tuned + ensemble),XT (tuned + ensemble),147/781,43/213
+CAT (tuned + ensemble),GBM (tuned + ensemble),1/213,47/1846
+CAT (tuned + ensemble),XGB (tuned + ensemble),109/1562,149/1562
+CAT (tuned + ensemble),TA-REALMLP (tuned + ensemble),0,0
+CAT (tuned + ensemble),TA-TABM (tuned + ensemble),0,3/1207
+CAT (tuned + ensemble),TA-TABDPT (default),2/71,148/1207
+CAT (tuned + ensemble),TA-TABPFN-2.6 (default),0,0
+CAT (tuned + ensemble),TA-TABICLv2 (default),0,0
+GBM (tuned + ensemble),LR (tuned + ensemble),224/1065,469/2130
+GBM (tuned + ensemble),RF (tuned + ensemble),377/1988,405/1988
+GBM (tuned + ensemble),XT (tuned + ensemble),137/923,80/497
+GBM (tuned + ensemble),CAT (tuned + ensemble),0,0
+GBM (tuned + ensemble),XGB (tuned + ensemble),27/568,113/1420
+GBM (tuned + ensemble),TA-REALMLP (tuned + ensemble),0,0
+GBM (tuned + ensemble),TA-TABM (tuned + ensemble),0,0
+GBM (tuned + ensemble),TA-TABDPT (default),23/1349,15/142
+GBM (tuned + ensemble),TA-TABPFN-2.6 (default),0,0
+GBM (tuned + ensemble),TA-TABICLv2 (default),0,0
+XGB (tuned + ensemble),LR (tuned + ensemble),182/1207,397/2414
+XGB (tuned + ensemble),RF (tuned + ensemble),269/1704,49/284
+XGB (tuned + ensemble),XT (tuned + ensemble),23/284,113/1207
+XGB (tuned + ensemble),CAT (tuned + ensemble),0,0
+XGB (tuned + ensemble),GBM (tuned + ensemble),0,0
+XGB (tuned + ensemble),TA-REALMLP (tuned + ensemble),0,0
+XGB (tuned + ensemble),TA-TABM (tuned + ensemble),0,0
+XGB (tuned + ensemble),TA-TABDPT (default),0,169/2556
+XGB (tuned + ensemble),TA-TABPFN-2.6 (default),0,0
+XGB (tuned + ensemble),TA-TABICLv2 (default),0,0
+TA-REALMLP (tuned + ensemble),LR (tuned + ensemble),314/923,651/1846
+TA-REALMLP (tuned + ensemble),RF (tuned + ensemble),271/994,101/355
+TA-REALMLP (tuned + ensemble),XT (tuned + ensemble),235/1136,489/2272
+TA-REALMLP (tuned + ensemble),CAT (tuned + ensemble),133/1704,57/568
+TA-REALMLP (tuned + ensemble),GBM (tuned + ensemble),159/1562,49/355
+TA-REALMLP (tuned + ensemble),XGB (tuned + ensemble),239/1704,137/852
+TA-REALMLP (tuned + ensemble),TA-TABM (tuned + ensemble),137/1846,8/71
+TA-REALMLP (tuned + ensemble),TA-TABDPT (default),227/2414,447/2414
+TA-REALMLP (tuned + ensemble),TA-TABPFN-2.6 (default),0,69/2698
+TA-REALMLP (tuned + ensemble),TA-TABICLv2 (default),29/2414,2/71
+TA-TABM (tuned + ensemble),LR (tuned + ensemble),124/497,523/1988
+TA-TABM (tuned + ensemble),RF (tuned + ensemble),403/1988,463/2130
+TA-TABM (tuned + ensemble),XT (tuned + ensemble),163/994,349/1988
+TA-TABM (tuned + ensemble),CAT (tuned + ensemble),0,31/2130
+TA-TABM (tuned + ensemble),GBM (tuned + ensemble),11/923,59/1704
+TA-TABM (tuned + ensemble),XGB (tuned + ensemble),57/994,38/497
+TA-TABM (tuned + ensemble),TA-REALMLP (tuned + ensemble),0,0
+TA-TABM (tuned + ensemble),TA-TABDPT (default),43/1278,154/1207
+TA-TABM (tuned + ensemble),TA-TABPFN-2.6 (default),0,0
+TA-TABM (tuned + ensemble),TA-TABICLv2 (default),0,0
+TA-TABDPT (default),LR (tuned + ensemble),97/1349,425/2698
+TA-TABDPT (default),RF (tuned + ensemble),58/1207,345/2414
+TA-TABDPT (default),XT (tuned + ensemble),11/1207,31/284
+TA-TABDPT (default),CAT (tuned + ensemble),0,0
+TA-TABDPT (default),GBM (tuned + ensemble),0,0
+TA-TABDPT (default),XGB (tuned + ensemble),0,28/1349
+TA-TABDPT (default),TA-REALMLP (tuned + ensemble),0,0
+TA-TABDPT (default),TA-TABM (tuned + ensemble),0,0
+TA-TABDPT (default),TA-TABPFN-2.6 (default),0,0
+TA-TABDPT (default),TA-TABICLv2 (default),0,0
+TA-TABPFN-2.6 (default),LR (tuned + ensemble),593/2414,773/1988
+TA-TABPFN-2.6 (default),RF (tuned + ensemble),475/1704,689/1704
+TA-TABPFN-2.6 (default),XT (tuned + ensemble),403/1988,615/1988
+TA-TABPFN-2.6 (default),CAT (tuned + ensemble),93/2414,323/2272
+TA-TABPFN-2.6 (default),GBM (tuned + ensemble),60/1207,173/1065
+TA-TABPFN-2.6 (default),XGB (tuned + ensemble),3/34,108/497
+TA-TABPFN-2.6 (default),TA-REALMLP (tuned + ensemble),0,76/923
+TA-TABPFN-2.6 (default),TA-TABM (tuned + ensemble),79/2556,301/1704
+TA-TABPFN-2.6 (default),TA-TABDPT (default),205/2698,65/284
+TA-TABPFN-2.6 (default),TA-TABICLv2 (default),0,96/1207
+TA-TABICLv2 (default),LR (tuned + ensemble),307/1278,109/426
+TA-TABICLv2 (default),RF (tuned + ensemble),37/142,521/1846
+TA-TABICLv2 (default),XT (tuned + ensemble),223/1136,457/2130
+TA-TABICLv2 (default),CAT (tuned + ensemble),89/2414,43/710
+TA-TABICLv2 (default),GBM (tuned + ensemble),121/2556,161/2414
+TA-TABICLv2 (default),XGB (tuned + ensemble),109/1278,129/1207
+TA-TABICLv2 (default),TA-REALMLP (tuned + ensemble),0,0
+TA-TABICLv2 (default),TA-TABM (tuned + ensemble),79/2556,113/2272
+TA-TABICLv2 (default),TA-TABDPT (default),203/2698,12/71
+TA-TABICLv2 (default),TA-TABPFN-2.6 (default),0,19/1278

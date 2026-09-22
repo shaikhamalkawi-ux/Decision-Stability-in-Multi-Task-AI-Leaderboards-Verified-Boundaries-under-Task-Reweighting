@@ -1,0 +1,72 @@
+{
+  "status": "PASS",
+  "seed": 220926,
+  "python": "3.13.5",
+  "numpy": "2.3.5",
+  "pandas": "2.2.3",
+  "scipy": "1.17.0",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "tests": {
+    "rank_pattern_generator": {
+      "cases": 68,
+      "pass": 68,
+      "method": "independent integer-label weak-order enumeration"
+    },
+    "rational_pairwise_vs_primal_lp": {
+      "cases": 400,
+      "infeasible": 44,
+      "max_abs_error": 2.7755575615628914e-16
+    },
+    "counterexample_complete_enumeration": {
+      "observed_loss_rows": [
+        [
+          2,
+          0,
+          null
+        ],
+        [
+          1,
+          null,
+          0
+        ],
+        [
+          1,
+          null,
+          2
+        ]
+      ],
+      "candidate": "A",
+      "weak_order_completions": 125,
+      "lower_exact": "0",
+      "upper_exact": "1/5",
+      "upper_pairwise_relaxation_exact": "2/9",
+      "attainable_radii_exact": [
+        "0",
+        "1/15",
+        "1/6",
+        "1/5"
+      ],
+      "no_new_ties_upper_exact": "1/6",
+      "max_lp_enumeration_error": 4.163336342344337e-17
+    },
+    "sharp_lower_and_relaxed_upper_vs_enumeration": {
+      "candidate_profiles": 72,
+      "pass": 72
+    },
+    "joint_milp_vs_full_completion_enumeration": {
+      "cases": 30,
+      "max_abs_error": 1.1102230246251565e-16
+    },
+    "integer_clipping_identity_vs_primal_lp": {
+      "cases": 200,
+      "max_abs_error": 1.0658141036401503e-14
+    },
+    "real_endpoint_witnesses": {
+      "completions": 2,
+      "pairwise_programs": 20,
+      "row_membership_checks": 284,
+      "max_abs_error": 3.885780586188048e-16,
+      "observed_relations_per_completion": 7430
+    }
+  }
+}

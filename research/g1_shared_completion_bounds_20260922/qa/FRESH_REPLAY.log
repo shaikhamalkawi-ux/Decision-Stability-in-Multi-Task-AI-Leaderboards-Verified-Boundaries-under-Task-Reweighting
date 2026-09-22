@@ -1,0 +1,5 @@
+RUN run_released_evidence.py
+RUN exact_realmlp_obstruction.py
+RUN validation.py
+RUN finalize_results.py
+PASS: exact endpoint certificates, compatible witnesses, and independent numerical checks.

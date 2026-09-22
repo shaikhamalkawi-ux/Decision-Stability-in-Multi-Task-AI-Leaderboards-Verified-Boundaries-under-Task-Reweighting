@@ -1,0 +1,10 @@
+{
+  "status": "PASS_R3_UNCHANGED",
+  "manuscript_matches_original_package_member": true,
+  "files": {
+    "CERT_Bench_MLWA_R3_DeskEditorClosure_Main_Manuscript_FINAL.pdf": "e6d707930466ad3cfd68c56090a2cdd5e9b42098781f9d98be27245da3486857",
+    "CERT_Bench_MLWA_R3_DeskEditorClosure_PREAUTHOR_Complete_Working_Package_FINAL.zip": "200e1863f623312ee91086f5394557dcc695e7806a5f2693d4edf37d3e5718a3"
+  },
+  "new_manuscript_created": false,
+  "claim": "New work is isolated in this G1 package; original R3 manuscript bytes match the original archive."
+}

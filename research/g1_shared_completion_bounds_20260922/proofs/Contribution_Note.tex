@@ -1,0 +1,466 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=23mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,booktabs,tabularx,array}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{CERT-Bench: contribution investigation}\fancyhead[R]{G1 / 22 September 2026}\fancyfoot[C]{\thepage}
+\setlength{\headheight}{14pt}
+\setlength{\parindent}{0pt}\setlength{\parskip}{5pt}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newcommand{\TV}{\operatorname{TV}}
+\newcommand{\C}{\mathcal C}
+\newcommand{\Pset}{\mathcal P}
+\newcommand{\R}{\mathbb R}
+\newcommand{\rlo}{\underline{\rho}}
+\newcommand{\rhi}{\overline{\rho}}
+\hypersetup{pdftitle={Shared-completion bounds for incomplete-benchmark decision stability},pdfauthor={},pdfsubject={G1 technical contribution gate; R3 unchanged}}
+\begin{document}
+\begin{center}
+{\LARGE\bfseries Shared-completion bounds for incomplete-benchmark decision stability}\par
+\vspace{5pt}
+{\large A technical contribution test, not an additional application}\par
+22 September 2026\par
+\end{center}
+
+\textbf{Decision.} The investigation produces a substantive extension of the current
+fixed-matrix analysis: sharp endpoints of winner-stability radii over an admissible
+family of incomplete rank evidence. The lower endpoint decomposes over rivals;
+the upper endpoint generally does not. Individually optimal pairwise completions
+can be incompatible. An exact constructed example and an existing-evidence
+experiment both exhibit this obstruction.
+
+\textbf{No manuscript change.} CERT-Bench R3 remains frozen. The results below do
+not replace its 122-task BeyondArena radius or its other benchmark results. This
+note is a separate research artifact. Its proofs and computations were developed
+within this project, not independently peer reviewed.
+
+\section*{Main findings}
+An exact three-task, three-model construction has 125 compatible weak-order
+completions. Its sharp upper winner radius is $1/5$, while separately optimized
+pairwise radii suggest $2/9$. Allowing new ties changes the sharp endpoint: it
+would be $1/6$ if those ties were excluded.
+
+The released-evidence experiment keeps all 122 complete 11-model rank rows and
+the nine-model relative orders on 20 additional BeyondArena tasks. On this
+\emph{declared coarsened ordinal evidence}, the following endpoints are sharp:
+\begin{center}
+\begin{tabular}{lccc}\toprule
+Fixed candidate & Lower endpoint & Sharp upper & Pairwise upper relaxation\\\midrule
+TabPFN-2.6 & $0$ & $96/1207=0.07953604$ & $96/1207$\\
+RealMLP & $0$ & $55/2414=0.02278376$ & $69/2698=0.02557450$\\
+Other nine models & $0$ & $0$ & $0$\\\bottomrule
+\end{tabular}
+\end{center}
+For RealMLP, the relaxation overstates the upper endpoint by
+$64/22933=0.00279074$, or $128/1045=12.2488\%$ relative to the sharp endpoint.
+A compatible rank completion attains $55/2414$. An independent integer dynamic
+program proves that no compatible completion exceeds it; this conclusion does
+not depend on a floating-point mixed-integer solver's optimality flag.
+
+\textbf{Evidence restriction.} The 40 unspecified positions in the selected
+representation are not asserted to be the original raw missing-cell pattern.
+Exact raw score/failure records were not recovered. Additional observed scores,
+metric bounds or failure semantics could narrow the completion family. The
+endpoint matrices are hypothetical proof witnesses, not new evaluations or
+imputed estimates. These are sharp endpoints for the declared ordinal family,
+not claimed sharp endpoints for the unrecovered full raw record.
+
+\textbf{Novelty restriction.} Necessary/possible winners, incomplete-rank
+aggregation, TV optimization and ILP are established foundations
+\cite{himmi,xia,chakraborty,tv}. The candidate contribution is their specific
+quantitative extension to sharp, rank-consistent task-weight stability envelopes,
+with a verified shared-completion obstruction. A first-in-literature claim is
+not established by the present search.
+
+\newpage
+\section{Fixed scope, incomplete evidence, and sharp endpoints}
+There are $D$ tasks and $M$ models. For each task $d$, let the nonempty finite set
+$\Pset_d\subset[0,1]^M$ contain every admissible full normalized rank-loss row.
+Ranks are lower-is-better, use average positions for ties, and are normalized by
+$M-1$. Observed order and equality relations are preserved. Unspecified models
+are inserted into a full weak order, not assigned independent rank intervals.
+A shared completion is $Z\in\C=\prod_{d=1}^D\Pset_d$.
+
+Task scope, candidate scope, and nominal weights $w^0\in\Delta_D$ are held fixed
+throughout, where $\Delta_D=\{w\in\R^D:w\geq0,\ \sum_d w_d=1\}$.
+For gap vector $g$, define the established TV boundary problem
+\begin{equation}
+\Phi(g)=\inf\{\tfrac12\lVert w-w^0\rVert_1:w\in\Delta_D,\ w^\top g\leq0\}.
+\end{equation}
+Its value is $+\infty$ if the feasible set is empty and $0$ if the nominal gap
+is already nonpositive. For a fixed candidate $i$,
+\begin{equation}
+\rho_i(Z)=\min_{j\ne i}\Phi(g^{ij}(Z)),\qquad
+ g_d^{ij}(Z)=Z_{dj}-Z_{di}.
+\end{equation}
+The sharp completion endpoints are
+\begin{equation}
+\rlo_i=\min_{Z\in\C}\rho_i(Z),\qquad
+\rhi_i=\max_{Z\in\C}\rho_i(Z).
+\end{equation}
+The finite completion family ensures attainment, allowing $+\infty$. The bracket
+$[\rlo_i,\rhi_i]$ is an envelope: it need not equal the set of attainable radii.
+It is neither a confidence interval nor a probability model for missing scores.
+
+\begin{proposition}[Sharp lower endpoint and pairwise upper relaxation]
+For $j\ne i$, define
+$\ell_d^j=\min_{p\in\Pset_d}(p_j-p_i)$ and
+$u_d^j=\max_{p\in\Pset_d}(p_j-p_i)$. Then
+\begin{equation}\label{eq:bounds}
+\rlo_i=\min_{j\ne i}\Phi(\ell^j),\qquad
+\rhi_i\leq U_i^{\rm pair}:=\min_{j\ne i}\Phi(u^j).
+\end{equation}
+Each $\Phi(u^j)$ is the sharp upper \emph{pairwise} endpoint. Equality in the
+second statement is certified by a single admissible completion with radius
+$U_i^{\rm pair}$; separate pairwise witnesses do not suffice.
+\end{proposition}
+\begin{proof}
+If $g\leq h$ componentwise, nonnegative task weights give
+$\{w:w^\top h\leq0\}\subseteq\{w:w^\top g\leq0\}$; hence
+$\Phi(g)\leq\Phi(h)$. Row independence makes each gap vector $\ell^j$ and $u^j$
+attainable for its particular rival. Interchanging the two finite minima gives
+$\min_Z\min_j\Phi(g^{ij}(Z))=\min_j\Phi(\ell^j)$. Conversely,
+$\max_Z\min_j\Phi(g^{ij}(Z))\leq\min_j\max_Z\Phi(g^{ij}(Z))
+=\min_j\Phi(u^j)$. The last maxima can use different completions. A shared
+witness attaining the upper bound proves equality.
+\end{proof}
+\begin{corollary}[Evidence tightening]
+If consistent additional evidence gives a nonempty family $\mathcal F\subseteq\C$,
+then $\rlo_i(\C)\leq\rlo_i(\mathcal F)\leq\rhi_i(\mathcal F)\leq\rhi_i(\C)$.
+Thus a coarse-family upper bound remains an outer bound after refinement, but
+its endpoint witness may cease to be admissible. This follows by set inclusion.
+\end{corollary}
+
+\newpage
+\section{A strict shared-completion obstruction, including ties}
+Consider three equally weighted tasks and models $A,B,C$. The observed loss
+rows are
+\begin{center}
+\begin{tabular}{lccc}\toprule
+Task & $A$ & $B$ & $C$\\\midrule
+1 & 2 & 0 & unspecified\\
+2 & 1 & unspecified & 0\\
+3 & 1 & unspecified & 2\\\bottomrule
+\end{tabular}
+\end{center}
+Only the shown order relations are imposed. The unspecified value can be below,
+between, above, or tied with either of the two distinct observed values. There
+are five weak orders per row and $5^3=125$ shared completions.
+
+In task 1, placing $C$ above both observed losses, so $B<A<C$, maximizes both
+rival-minus-$A$ gaps componentwise. In task 2, placing $B$ above both observed
+losses, so $C<A<B$, does the same. These dominance replacements cannot decrease
+$A$'s stability under any nonnegative weights. On task 3, only three nondominated
+weak orders remain:
+\begin{center}
+\begin{tabular}{lccc}\toprule
+Task 3 order & $(g^B_3,g^C_3)$ & $\rho_A$ & Role\\\midrule
+$A<B<C$ & $(1/2,1)$ & $1/6$ & Best for gap to $C$\\
+$A<(B=C)$ & $(3/4,3/4)$ & $1/5$ & Joint optimum\\
+$A<C<B$ & $(1,1/2)$ & $1/6$ & Best for gap to $B$\\\bottomrule
+\end{tabular}
+\end{center}
+For the joint optimum the gap vectors are
+\begin{equation}
+g^B=(-1/2,1/2,3/4),\qquad g^C=(1/2,-1/2,3/4).
+\end{equation}
+Each nominal gap is $1/4$. Moving weight from the largest gap $3/4$ to the
+smallest gap $-1/2$ reduces the aggregate gap by $5/4$ per unit moved. The required
+TV movement is $(1/4)/(5/4)=1/5$, below the donor's available mass $1/3$.
+This proves $\rhi_A=1/5$ after the dominance reductions.
+
+In contrast, the coordinatewise maximal pairwise vectors are
+$u^B=(-1/2,1/2,1)$ and $u^C=(1/2,-1/2,1)$. Their boundary radii are
+$(1/3)/(3/2)=2/9$. The required last positions of $B$ and $C$ on task 3 conflict:
+no single row can have both gaps equal to 1. Therefore
+\begin{equation}
+\rhi_A=\frac15 < \frac29=U_A^{\rm pair}.
+\end{equation}
+Direct rational enumeration gives exactly the attainable set
+$\{0,1/15,1/6,1/5\}$, independently checked with fresh primal LPs. In particular,
+the envelope $[0,1/5]$ does not imply all intermediate radii are attainable.
+Disallowing new ties removes the middle joint-optimum row and gives upper
+endpoint $1/6$.
+
+\textbf{Interpretation.} The obstruction is not that a challenger reaches a
+nominal winner before becoming globally feasible, as in R3. Here the issue is
+that the strongest evidence completion against one rival is inconsistent with
+that against another. The completion is required to be shared across every
+rival and every admissible reweighting.
+
+\newpage
+\section{An exact fixed-budget formulation}
+Let $B_\epsilon=\{w\in\Delta_D:\TV(w,w^0)\leq\epsilon\}$ and define
+\begin{equation}\label{eq:eta}
+\eta_i^*(\epsilon)=\max_{Z\in\C}\min_{j\ne i}\min_{w\in B_\epsilon}
+ w^\top g^{ij}(Z).
+\end{equation}
+\begin{proposition}[One completion, all rivals, all permitted weights]
+$\eta_i^*(\epsilon)>0$ if and only if some compatible completion has
+$\rho_i(Z)>\epsilon$. For explicitly enumerated row patterns, the value in
+\eqref{eq:eta} is the optimum of a mixed-integer linear program.
+\end{proposition}
+\begin{proof}
+The TV ball is compact. Absence of a nonpositive pairwise margin on that ball is
+therefore equivalent to a strictly positive minimum margin against every rival.
+A finite maximum over completions preserves the existence statement. Weak
+nonnegativity is insufficient at a tie.
+
+For fixed $g$, the dual of its TV-ball support minimization is
+\begin{equation}\label{eq:dual}
+\max_{\nu,t,v}\ \nu+(w^0)^\top v-2\epsilon t
+\quad\text{s.t.}\quad \nu+v_d\leq g_d,\quad -t\leq v_d\leq t,\quad t\geq0.
+\end{equation}
+This follows by introducing absolute-deviation variables in the primal and
+using LP duality. Both primal feasibility and finite optimality hold.
+Index row patterns by $p$. Introduce $y_{dp}\in\{0,1\}$ with
+$\sum_p y_{dp}=1$. For each rival $j$, use its own $(\nu_j,t_j,v^j)$, with the
+same $y$ across all rivals. Maximize $\eta$ subject to
+\begin{align}
+\nu_j+v^j_d&\leq\sum_{p\in\Pset_d}y_{dp}(p_j-p_i),\\
+-t_j&\leq v^j_d\leq t_j,\qquad t_j\geq0,\\
+\eta&\leq\nu_j+\sum_d w_d^0v^j_d-2\epsilon t_j\qquad(j\ne i).
+\end{align}
+Strong duality establishes equality with \eqref{eq:eta}. There are no products
+between continuous weight variables and binary completion variables. Relaxing
+$y$ to mixtures is only a relaxation: a mixture need not be a full rank row.
+\end{proof}
+
+The program is exact as a mathematical formulation. Floating-point MILP output
+still requires tolerance checks and does not itself prove an exact endpoint.
+No general polynomial-time guarantee is claimed; possible-winner problems and
+practical ILP precedents already exist for partial rankings and partial chains
+\cite{chakraborty,chains}.
+
+\textbf{Bounded implementation.} Since $g_d\in[-1,1]$, a dual optimum can be
+chosen with $t\leq1$, $|\nu|\leq1$ and $|v_d|\leq1$. To see this, put
+$m=\min_d g_d$. For a cutoff $c\in[m,\max_d g_d]$, take
+$t=(c-m)/2$, $\nu=(c+m)/2$, and $v_d=\min(g_d,c)-\nu$. These realize
+\begin{equation}\label{eq:clipgeneral}
+\min_{w\in B_\epsilon}w^\top g
+=\max_{c\in[m,\max g]}\left\{\sum_d w_d^0\min(g_d,c)-\epsilon(c-m)\right\}.
+\end{equation}
+For any feasible dual, setting $c=\nu+t$ shows its objective is bounded above by
+this expression, or by the endpoint $c=m$ if $c<m$; cutoffs beyond $\max g$ do not
+improve it. This also proves the stated bounds. TV extrema are an established
+foundation, not a separate novelty claim \cite{tv}.
+
+\newpage
+\section{Exact upper certification without trusting a solver flag}
+For the uniform 142-task experiment, all full normalized average ranks are on
+the grid $\{0,1/20,\ldots,1\}$. Scale a rival gap by 20 to get integers $a_d$,
+and let $m=\min_d a_d$. Equation~\eqref{eq:clipgeneral} gives the exact identity
+\begin{equation}\label{eq:clipint}
+\min_{w\in B_\epsilon}\sum_d w_d\frac{a_d}{20}
+=\frac{1}{20D}\max_{v\in\{m,\ldots,\max a\}}
+\left\{\sum_d\min(a_d,v)-D\epsilon(v-m)\right\}.
+\end{equation}
+The expression is piecewise linear between integer gaps, so a maximizing cutoff
+can be chosen on the integer grid. For $D\epsilon=k+h$, $k$ integer and
+$0<h<1$, the $(k+1)$st largest gap is a maximizing cutoff: the slope changes
+from positive to negative there. Equivalently, remove the top $k$ gaps and a
+fraction $h$ of the next gap, moving that weight to a minimum-gap row.
+
+\subsection*{The RealMLP certificate}
+Set $\epsilon=55/2414$ so that $D\epsilon=55/17=3+4/17$. Use two rivals,
+$A=$TabICLv2 and $B=$TabPFN-2.6. Across the 122 complete rows, their integer gap
+sums are $-126$ and $-208$; their minima are $m_A=-16$ and $m_B=-18$.
+Every admissible pattern on the 20 partial rows has gaps no smaller than these
+minima. Thus these minima are fixed across all completions.
+
+A maximizing cutoff is the fourth largest full gap. Known complete rows imply
+$v_A\in\{18,19,20\}$ and $v_B\in\{14,15,\ldots,20\}$. Only 21 cutoff pairs need
+checking, while retaining \emph{every} compatible joint gap pair on each partial
+row. Let $K_A(v_A)$ and $K_B(v_B)$ be the corresponding sums of clipped known
+gaps. For a partial row $r$, let $Q_r$ be its possible pairs $(a,b)$ of integer
+gaps to the two rivals.
+
+For a fixed cutoff pair, define $F_r(s)$ as the largest accumulated clipped
+$B$-gap over the first $r$ partial rows with accumulated clipped $A$-gap equal to
+$s$. Initialize $F_0(0)=0$ and other states $-\infty$. The exact recurrence is
+\begin{equation}
+F_r(s)=\max_{(a,b)\in Q_r}\left\{
+ F_{r-1}\bigl(s-\min(a,v_A)\bigr)+\min(b,v_B)\right\}.
+\end{equation}
+For the first rival to have a strictly positive support margin,
+\begin{equation}
+s> \frac{55}{17}(v_A-m_A)-K_A(v_A).
+\end{equation}
+Since $s$ is integer, the lower state threshold is the floor of the right-hand
+side plus 1. For all such states, the second rival's scaled support residual is
+at most
+\begin{equation}
+K_B(v_B)+\max_{s\text{ above threshold}}F_{20}(s)
+-\frac{55}{17}(v_B-m_B).
+\end{equation}
+Exact integer/rational evaluation across all 21 cutoff pairs gives maximum
+$-33/17$, strictly negative (normalized margin $-33/48280$). No completion can
+make both rival margins positive at this radius. Hence $\rhi_{\rm RealMLP}\leq
+55/2414$. The stored shared-completion witness has exact minimum pairwise
+radius $55/2414$, proving equality. The certificate uses necessary conditions
+from two rivals to exclude \emph{all} completions; it is not an enumeration of
+$381^{20}$ complete matrices.
+
+\newpage
+\section{Existing-evidence experiment and its limits}
+The input files are the byte-identical author-derived matrices
+\path{primary11__all__rank__equal__normalized_matrix.csv} and
+\path{coverage9__all__rank__equal__normalized_matrix.csv}
+from the R3 supplementary package. Their dimensions are $122\times11$ and
+$142\times9$. Restricting the complete matrix to the nine common models and
+recomputing ranks reproduces the bridge's 122 common rows with zero discrepancy.
+
+On the 20 remaining tasks, only the nine-model relative order is retained;
+TabDPT and TabPFN-2.6 positions are unspecified. Inserting the two models,
+including possible ties, gives 381 full rank rows per task. The completion family
+therefore has $381^{20}\approx4.1543\times10^{51}$ matrices and preserves 7,430
+observed unordered-pair relations. No distribution over those matrices is used.
+
+\textbf{TabPFN-2.6.} The sharp lower endpoint is zero: a valid lower witness
+makes RealMLP the unique nominal winner. A single upper witness attains the
+pairwise upper relaxation $96/1207$. Proposition~1 therefore certifies the sharp
+envelope $[0,96/1207]$.
+
+\textbf{RealMLP.} Its sharp lower endpoint is also zero. Separate pairwise upper
+optimization gives $69/2698$, but no shared completion attains that radius.
+The shared endpoint witness and Section~4's exact obstruction give
+$[0,55/2414]$. Its endpoint witness has the following exact boundary radii:
+\begin{center}
+\begin{tabular}{lrlr}\toprule
+Rival & Radius & Rival & Radius\\\midrule
+LinearModel & $319/923$ & XGBoost & $43/284$\\
+RandomForest & $79/284$ & TabM & $137/1420$\\
+ExtraTrees & $963/4544$ & TabDPT & $669/4544$\\
+CatBoost & $301/3408$ & TabPFN-2.6 & $31/1349$\\
+LightGBM & $91/710$ & TabICLv2 & $55/2414$\\\bottomrule
+\end{tabular}
+\end{center}
+For each of the other nine models, a zero pairwise upper relaxation proves that
+it cannot be a unique nominal winner under any completion. This does not rule
+out co-winner status by an independent argument and is not presented as such.
+
+\textbf{What this does not show.} The original complete-case result
+$41/2196\approx0.01867031$ for TabPFN-2.6 uses 122 equal task weights. The new
+endpoints use 142 equal task weights and a different evidence family. They do
+not correct, contradict, or improve that original number. No result is a
+probability of reversal, a deployment recommendation, or a universal robustness
+scale. No new result is asserted for top-$k$ or global feasible-winner entry.
+
+The inherited retrieval manifest records original raw hashes and byte counts,
+but not exact download URLs. Neither recovered archive supplied the original
+raw score/failure mask. G1 thus deliberately coarsens the released evidence.
+It does not assert that all 40 unspecified positions were originally missing,
+that unsupported evaluations have ordinary latent scores, or that every ordinal
+completion is compatible with unrecovered metric bounds. Those distinctions
+must be resolved before a sharp \emph{original-raw} missingness claim.
+
+\newpage
+\section{Validation, contribution boundary, and next decision}
+The calculations were executed with Python 3.13.5, NumPy 2.3.5, pandas 2.2.3 and
+SciPy 1.17.0. Exact endpoint and upper-obstruction checks use rational/integer
+arithmetic. Independent LP/MILP comparisons use floating-point HiGHS solves.
+\begin{center}
+\begin{tabularx}{\linewidth}{@{}Xrr@{}}\toprule
+Validation & Cases & Maximum discrepancy\\\midrule
+Insertion generator vs independent weak-order enumeration & 68 & 0\\
+Rational pairwise radii vs fresh primal LPs & 400 & $2.78\times10^{-16}$\\
+Constructed-example full completion enumeration & 125 & $4.16\times10^{-17}$\\
+Sharp lower / relaxed upper vs exhaustive candidate profiles & 72 & 0 violations\\
+Joint MILP vs full completion enumeration + primal LP & 30 & $1.11\times10^{-16}$\\
+Integer clipping identity vs fresh primal support LP & 200 & $1.07\times10^{-14}$\\
+Real endpoint witness pairwise checks & 20 & $3.89\times10^{-16}$\\
+RealMLP exact upper-obstruction cutoff pairs & 21 & Exact integer PASS\\\bottomrule
+\end{tabularx}
+\end{center}
+Both real endpoint witnesses passed all 284 full-row membership checks and
+preserved all 7,430 observed relations per completion. The mixed-integer solver
+also returned zero joint margin at $55/2414$ with zero reported MIP gap, but this
+numerical result is supplementary to the integer upper certificate. Code-path
+independence does not eliminate correlated specification errors; external
+mathematical review remains appropriate.
+
+\subsection*{What can credibly be claimed}
+The exact object differs from obtaining a point ranking by completing missing
+scores \cite{himmi} or estimating identifiable scores from incomplete samples
+\cite{onebench}. It quantitatively refines possible/necessary unique-winner
+analysis \cite{xia,chakraborty} by retaining a continuum of TV task-weight
+perturbations. Its mathematical foundations remain familiar: minimax ordering,
+TV support duality, partial rankings, and discrete optimization
+\cite{tv,chains}. The present search does not establish priority for the complete
+combination or an absence of equivalent earlier formulations.
+
+The contribution candidate is therefore specific: \emph{sharp completion
+endpoints for task-reweighting stability, a proof that sharp pairwise endpoints
+can overstate joint winner stability, and checkable shared-completion endpoint
+certificates}. The real-data relaxation gap demonstrates that respecting one
+shared completion changes the answer, rather than merely adding computation.
+
+\subsection*{Next decision}
+G1 is a mathematical/computational pass for its declared ordinal model. Keep R3
+as the active manuscript. Before integration, complete the closest-prior-work
+comparison and choose whether to report the precisely labeled ordinal-evidence
+experiment or tighten it using the original raw mask and metric/failure
+constraints. The latter requires exact artifact recovery, not a different
+benchmark or a newer living-registry snapshot. Added consistent constraints
+must narrow the envelope; endpoint values must not be protected by omitting
+newly recovered evidence. Integration should replace repetitive exposition,
+not append another application or inflate dataset counts.
+
+\newpage
+\begin{thebibliography}{9}
+\bibitem{himmi} A. Himmi, E. Irurozki, N. Noiry, S. Cl\'emen\c{c}on, and P. Colombo.
+Towards More Robust NLP System Evaluation: Handling Missing Scores in Benchmarks.
+\emph{Findings of EMNLP}, 11759--11785, 2024.
+\href{https://doi.org/10.18653/v1/2024.findings-emnlp.688}{doi:10.18653/v1/2024.findings-emnlp.688}.
+
+\bibitem{xia} L. Xia and V. Conitzer. Determining Possible and Necessary Winners
+Given Partial Orders. \emph{Journal of Artificial Intelligence Research}, 41:25--67, 2011.
+\href{https://doi.org/10.1613/jair.3186}{doi:10.1613/jair.3186}.
+Author version: arXiv:1401.3876.
+
+\bibitem{chakraborty} V. Chakraborty, T. Delemazure, B. Kimelfeld, P. G. Kolaitis,
+K. Relia, and J. Stoyanovich. Algorithmic Techniques for Necessary and Possible
+Winners. \emph{ACM/IMS Transactions on Data Science}, 2(3), Article 22, 2021.
+\href{https://doi.org/10.1145/3458472}{doi:10.1145/3458472}.
+Author version: arXiv:2005.06779.
+
+\bibitem{chains} V. Chakraborty and P. G. Kolaitis. Classifying the Complexity of
+the Possible Winner Problem on Partial Chains. \emph{AAMAS}, 297--305, 2021.
+Author preprint: \emph{The Complexity of Possible Winners on Partial Chains},
+arXiv:2002.12510.
+
+\bibitem{tv} C. D. Charalambous, I. Tzortzis, S. Loyka, and T. Charalambous.
+Extremum Problems with Total Variation Distance and their Applications.
+\href{https://arxiv.org/abs/1301.4763}{arXiv:1301.4763}, 2013.
+
+\bibitem{onebench} A. Ghosh, S. Dziadzio, A. Prabhu, V. Udandarao, S. Albanie,
+and M. Bethge. ONEBench to Test Them All: Sample-Level Benchmarking Over Open-Ended
+Capabilities. \href{https://arxiv.org/abs/2412.06745}{arXiv:2412.06745v2}, revised 2025.
+\end{thebibliography}
+
+\section*{Reproduction and source provenance}
+Run \texttt{python code/reproduce.py} from the package root. It verifies input
+hashes, rebuilds pattern sets, calculates endpoint bounds, recomputes the exact
+upper obstruction, executes independent tests, and produces the final result
+summary. The stored RealMLP endpoint is verified as a proof witness; the optional
+\texttt{--rediscover} flag also reruns the mixed-integer search. Alternative
+optimal solver witnesses need not be byte-identical.
+
+The public technical literature above was checked on 22 September 2026. The
+primary empirical inputs are the two derived rank matrices in the author-supplied
+R3 supplement, not new live downloads. Source hashes and the original raw-artifact
+retrieval manifest are included. No third-party raw parquet, author biographies,
+credentials, manuscript author-role claims, or repository DOI is included.
+
+The G1 validation, proofs and output tables are separated from the journal-facing
+manuscript. The R3 main PDF matches its original package member by SHA-256:
+\begin{quote}\small\ttfamily
+ e6d707930466ad3cfd68c56090a2cdd5e9b42098781f9d98be27245da3486857
+\end{quote}
+The complete source register records what was checked, which foundations are
+inherited, and the limit of the novelty search. The note does not claim an
+independent human validation, a formal proof-assistant verification, or journal
+acceptance readiness for the extension.
+\end{document}

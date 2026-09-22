@@ -1,0 +1,161 @@
+{
+  "status": "PASS_SHARP_ENDPOINTS_FOR_DECLARED_COARSENED_ORDINAL_EVIDENCE",
+  "R3_changed": false,
+  "original_full_raw_missingness_validation": "HOLD_NOT_EXECUTED",
+  "complete_tasks": 122,
+  "partial_tasks": 20,
+  "full_task_scope": 142,
+  "candidate_scope": 11,
+  "unspecified_positions_in_this_evidence_representation": 40,
+  "original_raw_missing_cell_count": "NOT_ASSERTED",
+  "completion_count_exact": "4154315858838089650465148940810873027656486127923601",
+  "retained_ordinal_relations": 7430,
+  "scope_note": "Preserves full 11-model ranks on 122 tasks and relative nine-model ranks on 20 additional tasks. The two unspecified model positions on those 20 tasks are a declared evidence coarsening, not an assertion about which original raw scores were missing.",
+  "sharp_candidate_envelopes": [
+    {
+      "candidate": "LR (tuned + ensemble)",
+      "lower_exact": "0",
+      "upper_exact": "0",
+      "lower": 0.0,
+      "upper": 0.0,
+      "pairwise_upper_relaxation_exact": "0",
+      "upper_certificate": "pairwise upper bound attained by shared completion",
+      "upper_witness": "completion_00_upper_feasible_rank.csv",
+      "lower_witness": "completion_00_lower_rank.csv",
+      "can_be_unique_nominal_winner": false
+    },
+    {
+      "candidate": "RF (tuned + ensemble)",
+      "lower_exact": "0",
+      "upper_exact": "0",
+      "lower": 0.0,
+      "upper": 0.0,
+      "pairwise_upper_relaxation_exact": "0",
+      "upper_certificate": "pairwise upper bound attained by shared completion",
+      "upper_witness": "completion_01_upper_feasible_rank.csv",
+      "lower_witness": "completion_01_lower_rank.csv",
+      "can_be_unique_nominal_winner": false
+    },
+    {
+      "candidate": "XT (tuned + ensemble)",
+      "lower_exact": "0",
+      "upper_exact": "0",
+      "lower": 0.0,
+      "upper": 0.0,
+      "pairwise_upper_relaxation_exact": "0",
+      "upper_certificate": "pairwise upper bound attained by shared completion",
+      "upper_witness": "completion_02_upper_feasible_rank.csv",
+      "lower_witness": "completion_02_lower_rank.csv",
+      "can_be_unique_nominal_winner": false
+    },
+    {
+      "candidate": "CAT (tuned + ensemble)",
+      "lower_exact": "0",
+      "upper_exact": "0",
+      "lower": 0.0,
+      "upper": 0.0,
+      "pairwise_upper_relaxation_exact": "0",
+      "upper_certificate": "pairwise upper bound attained by shared completion",
+      "upper_witness": "completion_03_upper_feasible_rank.csv",
+      "lower_witness": "completion_03_lower_rank.csv",
+      "can_be_unique_nominal_winner": false
+    },
+    {
+      "candidate": "GBM (tuned + ensemble)",
+      "lower_exact": "0",
+      "upper_exact": "0",
+      "lower": 0.0,
+      "upper": 0.0,
+      "pairwise_upper_relaxation_exact": "0",
+      "upper_certificate": "pairwise upper bound attained by shared completion",
+      "upper_witness": "completion_04_upper_feasible_rank.csv",
+      "lower_witness": "completion_04_lower_rank.csv",
+      "can_be_unique_nominal_winner": false
+    },
+    {
+      "candidate": "XGB (tuned + ensemble)",
+      "lower_exact": "0",
+      "upper_exact": "0",
+      "lower": 0.0,
+      "upper": 0.0,
+      "pairwise_upper_relaxation_exact": "0",
+      "upper_certificate": "pairwise upper bound attained by shared completion",
+      "upper_witness": "completion_05_upper_feasible_rank.csv",
+      "lower_witness": "completion_05_lower_rank.csv",
+      "can_be_unique_nominal_winner": false
+    },
+    {
+      "candidate": "TA-REALMLP (tuned + ensemble)",
+      "lower_exact": "0",
+      "upper_exact": "55/2414",
+      "lower": 0.0,
+      "upper": 0.022783761391880698,
+      "pairwise_upper_relaxation_exact": "69/2698",
+      "upper_certificate": "exact integer DP plus endpoint witness",
+      "upper_witness": "realmlp_joint_best_rank.csv",
+      "lower_witness": "completion_06_lower_rank.csv",
+      "can_be_unique_nominal_winner": true
+    },
+    {
+      "candidate": "TA-TABM (tuned + ensemble)",
+      "lower_exact": "0",
+      "upper_exact": "0",
+      "lower": 0.0,
+      "upper": 0.0,
+      "pairwise_upper_relaxation_exact": "0",
+      "upper_certificate": "pairwise upper bound attained by shared completion",
+      "upper_witness": "completion_07_upper_feasible_rank.csv",
+      "lower_witness": "completion_07_lower_rank.csv",
+      "can_be_unique_nominal_winner": false
+    },
+    {
+      "candidate": "TA-TABDPT (default)",
+      "lower_exact": "0",
+      "upper_exact": "0",
+      "lower": 0.0,
+      "upper": 0.0,
+      "pairwise_upper_relaxation_exact": "0",
+      "upper_certificate": "pairwise upper bound attained by shared completion",
+      "upper_witness": "completion_08_upper_feasible_rank.csv",
+      "lower_witness": "completion_08_lower_rank.csv",
+      "can_be_unique_nominal_winner": false
+    },
+    {
+      "candidate": "TA-TABPFN-2.6 (default)",
+      "lower_exact": "0",
+      "upper_exact": "96/1207",
+      "lower": 0.0,
+      "upper": 0.07953603976801989,
+      "pairwise_upper_relaxation_exact": "96/1207",
+      "upper_certificate": "pairwise upper bound attained by shared completion",
+      "upper_witness": "completion_09_upper_feasible_rank.csv",
+      "lower_witness": "completion_09_lower_rank.csv",
+      "can_be_unique_nominal_winner": true
+    },
+    {
+      "candidate": "TA-TABICLv2 (default)",
+      "lower_exact": "0",
+      "upper_exact": "0",
+      "lower": 0.0,
+      "upper": 0.0,
+      "pairwise_upper_relaxation_exact": "0",
+      "upper_certificate": "pairwise upper bound attained by shared completion",
+      "upper_witness": "completion_10_upper_feasible_rank.csv",
+      "lower_witness": "completion_10_lower_rank.csv",
+      "can_be_unique_nominal_winner": false
+    }
+  ],
+  "shared_completion_incompatibility": {
+    "candidate": "RealMLP",
+    "relaxed_upper_exact": "69/2698",
+    "sharp_upper_exact": "55/2414",
+    "absolute_overstatement_exact": "64/22933",
+    "relative_overstatement_exact": "128/1045",
+    "relative_overstatement_percent": 12.248803827751196
+  },
+  "novelty_status": "CANDIDATE_CONTRIBUTION; no first-in-literature claim; foundational components acknowledged",
+  "source_sha256": {
+    "coverage9__all__rank__equal__normalized_matrix.csv": "134b7004ca17a69bb1bf35fd5d19b45ca8794de8a337fc7b40ebbdcd3d857393",
+    "primary11__all__rank__equal__normalized_matrix.csv": "dae0f073833ee9200767a83c42221b023a2753300aed63df02c5e71a427d5167"
+  }
+}

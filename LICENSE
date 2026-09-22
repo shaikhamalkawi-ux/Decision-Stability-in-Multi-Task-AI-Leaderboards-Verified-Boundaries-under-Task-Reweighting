@@ -1,0 +1,15 @@
+CERT-Bench uses a mixed-license structure.
+
+Author-created source code is licensed under the Apache License, Version 2.0
+(SPDX: Apache-2.0).
+
+Author-created narrative and documentation are licensed under the Creative
+Commons Attribution 4.0 International license (SPDX: CC-BY-4.0).
+
+Derived inputs, results, and third-party provenance records are governed by the
+rights and redistribution limits described in LICENSE_SCOPE.md. No underlying
+third-party data is relicensed by this repository.
+
+The complete controlling scope statement and official license links are in:
+
+LICENSE_SCOPE.md

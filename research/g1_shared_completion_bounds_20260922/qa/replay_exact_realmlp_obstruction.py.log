@@ -1,0 +1,27 @@
+{
+  "status": "PASS_EXACT_INTEGER_ARITHMETIC",
+  "candidate": "TA-REALMLP (tuned + ensemble)",
+  "radius_upper_exact": "55/2414",
+  "first_rival": "TA-TABICLv2 (default)",
+  "second_rival": "TA-TABPFN-2.6 (default)",
+  "D": 142,
+  "rank_integer_scale": 20,
+  "transferred_uniform_row_units_exact": "55/17",
+  "known_first_gap_sum": -126,
+  "known_second_gap_sum": -208,
+  "fixed_first_minimum": -16,
+  "fixed_second_minimum": -18,
+  "first_cutoff_range": [
+    18,
+    20
+  ],
+  "second_cutoff_range": [
+    14,
+    20
+  ],
+  "maximum_second_margin_scaled_exact": "-33/17",
+  "maximum_second_margin_exact": "-33/48280",
+  "threshold_pairs_checked": 21,
+  "unresolved_tasks": 20,
+  "explanation": "Any completion with radius greater than the stated bound must admit clipping cutoffs making both rival margins strictly positive. Exact integer DP over all admissible cutoff pairs proves this impossible."
+}

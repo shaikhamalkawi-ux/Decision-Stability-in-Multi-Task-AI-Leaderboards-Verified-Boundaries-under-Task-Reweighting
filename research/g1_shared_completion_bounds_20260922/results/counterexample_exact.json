@@ -1,0 +1,32 @@
+{
+  "observed_loss_rows": [
+    [
+      2,
+      0,
+      null
+    ],
+    [
+      1,
+      null,
+      0
+    ],
+    [
+      1,
+      null,
+      2
+    ]
+  ],
+  "candidate": "A",
+  "weak_order_completions": 125,
+  "lower_exact": "0",
+  "upper_exact": "1/5",
+  "upper_pairwise_relaxation_exact": "2/9",
+  "attainable_radii_exact": [
+    "0",
+    "1/15",
+    "1/6",
+    "1/5"
+  ],
+  "no_new_ties_upper_exact": "1/6",
+  "max_lp_enumeration_error": 4.163336342344337e-17
+}

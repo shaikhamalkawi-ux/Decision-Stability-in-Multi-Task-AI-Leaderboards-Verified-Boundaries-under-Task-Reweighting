@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "pages": 8,
+  "unresolved_references": 0,
+  "overfull_boxes_final": 0,
+  "fonts": "All reported embedded; no Type 3",
+  "visual_review": "All eight pages reviewed in a contact sheet; dense proof and validation pages additionally inspected at full size.",
+  "render_engine": "PyMuPDF 1.5x rasterization",
+  "original_R3_manuscript_unchanged": true
+}

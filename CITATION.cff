@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+message: "Please cite the versioned repository or Zenodo record corresponding to the material you use."
+title: "CERT-Bench: Decision Stability in Multi-Task AI Leaderboards"
+type: software
+version: "G1-research-snapshot"
+date-released: 2026-09-22
+repository-code: "https://github.com/shaikhamalkawi-ux/Decision-Stability-in-Multi-Task-AI-Leaderboards-Verified-Boundaries-under-Task-Reweighting"
+authors:
+  - family-names: Malkawi
+    given-names: Ghassan
+    orcid: "https://orcid.org/0000-0002-5320-7561"
+    affiliation: "Higher Colleges of Technology"
+  - family-names: Elsayed
+    given-names: Ahmed
+    orcid: "https://orcid.org/0000-0002-9255-200X"
+    affiliation: "Canadian University Dubai"
+  - family-names: Alhagyan
+    given-names: Mohammed
+    orcid: "https://orcid.org/0000-0003-4090-6125"
+    affiliation: "United Arab Emirates University"
+  - family-names: Hussein
+    given-names: Bakeel
+    affiliation: "Sana'a Community College"
+preferred-citation:
+  type: report
+  title: "Shared-completion bounds for incomplete-benchmark decision stability: G1 research snapshot"
+  version: "G1"
+  year: 2026
+  authors:
+    - family-names: Malkawi
+      given-names: Ghassan
+      orcid: "https://orcid.org/0000-0002-5320-7561"
+    - family-names: Elsayed
+      given-names: Ahmed
+      orcid: "https://orcid.org/0000-0002-9255-200X"
+    - family-names: Alhagyan
+      given-names: Mohammed
+      orcid: "https://orcid.org/0000-0003-4090-6125"
+    - family-names: Hussein
+      given-names: Bakeel

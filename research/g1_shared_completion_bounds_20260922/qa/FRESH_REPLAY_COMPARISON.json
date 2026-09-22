@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "registered_outputs": 10,
+  "byte_identical": {
+    "results/FINAL_SHARP_ENVELOPES.csv": true,
+    "results/FINAL_RESULT_SUMMARY.json": true,
+    "results/counterexample_exact.json": true,
+    "results/realmlp_exact_obstruction.json": true,
+    "results/realmlp_exact_obstruction_thresholds.csv": true,
+    "results/released_ordinal_pairwise_envelopes.csv": true,
+    "results/released_ordinal_row_patterns.csv": true,
+    "qa/endpoint_witness_independent_lp.csv": true,
+    "qa/joint_formulation_validation.csv": true,
+    "qa/VALIDATION_REPORT.json": true
+  }
+}

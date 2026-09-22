@@ -1,0 +1,5 @@
+# Preserve the frozen G1 package byte representation across platforms so that
+# its internal SHA-256 manifest remains valid after checkout. The package uses
+# intentional mixed line endings in some generated logs, so every covered file
+# is stored as an opaque byte sequence.
+research/g1_shared_completion_bounds_20260922/** -text

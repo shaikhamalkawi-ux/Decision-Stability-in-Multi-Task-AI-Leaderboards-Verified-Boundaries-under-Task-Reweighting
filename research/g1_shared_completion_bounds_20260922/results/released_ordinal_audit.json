@@ -1,0 +1,18 @@
+{
+  "evidence_type": "COARSENED_RELEASED_ORDINAL_EVIDENCE_NOT_FULL_RAW_SCORE_AUDIT",
+  "no_claim": "The 40 unspecified positions are not asserted to be the original raw missing-cell pattern.",
+  "complete_tasks": 122,
+  "full_tasks": 142,
+  "methods": 11,
+  "additional_tasks": 20,
+  "unspecified_method_task_positions": 40,
+  "unspecified_candidates": [
+    "TA-TABDPT (default)",
+    "TA-TABPFN-2.6 (default)"
+  ],
+  "state_count_exact": "4154315858838089650465148940810873027656486127923601",
+  "screening_sharp_upper_count": 10,
+  "primary_input_sha256": "dae0f073833ee9200767a83c42221b023a2753300aed63df02c5e71a427d5167",
+  "bridge_input_sha256": "134b7004ca17a69bb1bf35fd5d19b45ca8794de8a337fc7b40ebbdcd3d857393",
+  "observed_pairwise_relations": 7430
+}
