@@ -1,0 +1,10 @@
+case_id,winner,competitor,finite,radius_tv,verification_status,objective_gap,maximum_primal_violation,maximum_dual_violation,maximum_complementarity_residual
+benchpress_primary10__rank__equal,claude-opus-4.6,claude-opus-4.5,True,0.4696969696969698,PASS,5.551115123125783e-17,2.914335439641036e-16,1.1102230246251565e-16,2.3592239273284576e-16
+benchpress_primary10__rank__equal,claude-opus-4.6,claude-sonnet-4.5,False,inf,INFEASIBLE,,,,
+benchpress_primary10__rank__equal,claude-opus-4.6,deepseek-v3.2,False,inf,INFEASIBLE,,,,
+benchpress_primary10__rank__equal,claude-opus-4.6,doubao-seed-2.0-pro,True,0.390909090909091,PASS,0.0,2.220446049250313e-16,2.220446049250313e-16,2.4885396773558194e-17
+benchpress_primary10__rank__equal,claude-opus-4.6,gemini-2.5-pro,False,inf,INFEASIBLE,,,,
+benchpress_primary10__rank__equal,claude-opus-4.6,gemini-3-pro,True,0.25757575757575757,PASS,0.0,1.3877787807814457e-16,1.6653345369377348e-16,7.017744970997084e-17
+benchpress_primary10__rank__equal,claude-opus-4.6,gpt-5,False,inf,INFEASIBLE,,,,
+benchpress_primary10__rank__equal,claude-opus-4.6,gpt-5.2,True,0.09090909090909088,PASS,0.0,3.608224830031759e-16,0.0,9.020562075079397e-17
+benchpress_primary10__rank__equal,claude-opus-4.6,kimi-k2.5,True,0.625,PASS,1.1102230246251565e-16,1.1102230246251565e-16,0.0,3.784851220313033e-18

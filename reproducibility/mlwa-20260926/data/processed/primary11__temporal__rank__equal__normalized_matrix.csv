@@ -1,0 +1,12 @@
+task,LR (tuned + ensemble),RF (tuned + ensemble),XT (tuned + ensemble),CAT (tuned + ensemble),GBM (tuned + ensemble),XGB (tuned + ensemble),TA-REALMLP (tuned + ensemble),TA-TABM (tuned + ensemble),TA-TABDPT (default),TA-TABPFN-2.6 (default),TA-TABICLv2 (default)
+acquire_valued_shoppers_challenge-f519aa482bb5,1.0,0.5,0.8,0.7,0.4,0.6,0.3,0.2,0.1,0.0,0.9
+anes_voting_2026-58a0e941922e,0.7,0.8,0.9,0.2,0.1,0.0,0.4,0.3,1.0,0.5,0.6
+california_house_prices_2020-08905ffc576b,0.9,0.8,0.7,0.3,0.4,0.5,0.1,0.6,1.0,0.0,0.2
+coffee_rating_prediction-5ff37781e0a3,0.8,0.9,1.0,0.5,0.3,0.4,0.1,0.6,0.7,0.0,0.2
+garments_worker_productivity-7b6a94e87c93,1.0,0.3,0.7,0.1,0.4,0.2,0.5,0.6,0.8,0.0,0.9
+ghanas_indigenous_intel-ecbbda50d44e,0.5,0.8,0.7,0.3,0.1,0.6,0.0,0.2,1.0,0.4,0.9
+hotel_booking_demand-9541da6f5a2b,0.5,0.9,0.8,0.0,0.4,0.3,0.2,0.1,1.0,0.6,0.7
+kick-57821d387256,0.8,1.0,0.9,0.3,0.4,0.5,0.2,0.6,0.7,0.0,0.1
+mercedes_benz_greener_manufacturing-da8ac0e00317,0.7,1.0,0.6,0.4,0.2,0.9,0.3,0.5,0.8,0.1,0.0
+sberbank_housing_market_forecasting-54316cfd1a18,0.8,0.9,0.7,0.4,0.3,0.2,0.1,0.6,0.5,0.0,1.0
+sf_permit_time-a3faf4c318ef,0.8,0.6,0.7,0.1,0.2,0.3,0.4,0.9,1.0,0.0,0.5

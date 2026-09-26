@@ -1,0 +1,4 @@
+case,D_tasks,M_methods,winner,nearest_challenger,top1_radius_tv,top3_radius_tv,top3_displaced_inside,top3_entering_outside,top5_radius_tv,top5_displaced_inside,top5_entering_outside,maximum_locked_value_difference,status
+TabArena,51,14,REALMLP (tuned + ensemble),GBM (tuned + ensemble),0.03660130718954249,0.028322440087145972,TABM (tuned + ensemble),CAT (tuned + ensemble),0.005446623093681904,MNCA (tuned + ensemble),XGB (tuned + ensemble),6.938893903907228e-17,PASS
+BenchPress,11,10,claude-opus-4.6,gpt-5.2,0.0909090909090909,0.040909090909090895,gemini-3-pro,claude-opus-4.5,0.17171717171717168,claude-opus-4.5,kimi-k2.5,1.5959455978986625e-16,PASS
+BeyondArena,122,11,TA-TABPFN-2.6 (default),TA-TABICLv2 (default),0.018670309653916185,0.08606557377049173,TA-REALMLP (tuned + ensemble),CAT (tuned + ensemble),0.018915510718789386,CAT (tuned + ensemble),GBM (tuned + ensemble),1.3877787807814457e-16,PASS
