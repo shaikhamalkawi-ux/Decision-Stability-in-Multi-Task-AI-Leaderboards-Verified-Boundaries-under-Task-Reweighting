@@ -1,0 +1,14 @@
+case_id,winner,competitor,finite,radius_tv,verification_status,objective_gap,maximum_primal_violation,maximum_dual_violation,maximum_complementarity_residual
+tabarena_primary14__rank__equal,REALMLP (tuned + ensemble),CAT (tuned + ensemble),True,0.09090909090909095,PASS,4.163336342344337e-17,9.992007221626409e-16,7.771561172376096e-16,3.4221363116997086e-17
+tabarena_primary14__rank__equal,REALMLP (tuned + ensemble),EBM (tuned + ensemble),True,0.2366013071895424,PASS,0.0,9.992007221626409e-16,1.1102230246251565e-16,5.253604377964782e-17
+tabarena_primary14__rank__equal,REALMLP (tuned + ensemble),FASTAI (tuned + ensemble),True,0.3092006033182503,PASS,1.1102230246251565e-16,1.3322676295501878e-15,1.1102230246251565e-16,1.2642076589659098e-16
+tabarena_primary14__rank__equal,REALMLP (tuned + ensemble),GBM (tuned + ensemble),True,0.03660130718954256,PASS,6.245004513516506e-17,1.1102230246251565e-15,6.245004513516506e-17,2.798687207909248e-17
+tabarena_primary14__rank__equal,REALMLP (tuned + ensemble),KNN (tuned + ensemble),False,inf,INFEASIBLE,,,,
+tabarena_primary14__rank__equal,REALMLP (tuned + ensemble),LR (tuned + ensemble),True,0.5203619909502266,PASS,3.3306690738754696e-16,7.771561172376096e-16,1.1102230246251565e-16,1.1102230246251565e-16
+tabarena_primary14__rank__equal,REALMLP (tuned + ensemble),MNCA (tuned + ensemble),True,0.13574660633484156,PASS,1.1102230246251565e-16,1.2212453270876722e-15,2.220446049250313e-16,2.8823097754691566e-17
+tabarena_primary14__rank__equal,REALMLP (tuned + ensemble),NN_TORCH (tuned + ensemble),True,0.2727272727272726,PASS,1.1102230246251565e-16,8.881784197001252e-16,1.3877787807814457e-16,6.662876516608867e-17
+tabarena_primary14__rank__equal,REALMLP (tuned + ensemble),RF (tuned + ensemble),True,0.2975778546712805,PASS,1.6653345369377348e-16,5.93275428784068e-16,2.42861286636753e-17,2.2684060512332015e-16
+tabarena_primary14__rank__equal,REALMLP (tuned + ensemble),TABDPT (default),True,0.2156862745098039,PASS,2.7755575615628914e-17,2.6020852139652106e-16,4.163336342344337e-17,1.8199608997136823e-16
+tabarena_primary14__rank__equal,REALMLP (tuned + ensemble),TABM (tuned + ensemble),True,0.03921568627450976,PASS,3.469446951953614e-17,5.551115123125783e-16,0.0,2.344061449887604e-16
+tabarena_primary14__rank__equal,REALMLP (tuned + ensemble),XGB (tuned + ensemble),True,0.14542483660130728,PASS,2.7755575615628914e-17,1.1102230246251565e-15,1.1102230246251565e-16,3.324886662288881e-17
+tabarena_primary14__rank__equal,REALMLP (tuned + ensemble),XT (tuned + ensemble),True,0.3095238095238095,PASS,1.1102230246251565e-16,9.992007221626409e-16,1.1102230246251565e-16,2.516867530604025e-17

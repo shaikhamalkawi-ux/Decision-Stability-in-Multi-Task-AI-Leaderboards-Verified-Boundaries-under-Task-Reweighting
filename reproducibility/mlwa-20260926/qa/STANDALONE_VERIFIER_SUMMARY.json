@@ -1,0 +1,10 @@
+{
+  "verifier": "dependency-free Python standard-library verifier",
+  "analysis_implementation_imported": false,
+  "records_checked": 101,
+  "all_pass": true,
+  "maximum_objective_gap": 4.996003610813204e-16,
+  "maximum_primal_violation": 9.853229343548264e-16,
+  "maximum_dual_violation": 7.771561172376096e-16,
+  "maximum_complementarity_residual": 4.649058915617843e-16
+}

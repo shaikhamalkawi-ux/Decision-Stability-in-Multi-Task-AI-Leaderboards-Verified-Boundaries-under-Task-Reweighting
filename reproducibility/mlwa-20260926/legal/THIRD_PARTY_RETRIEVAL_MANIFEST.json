@@ -1,0 +1,99 @@
+{
+  "manifest_version": "1.0.0",
+  "policy": "Third-party raw files are retrieval-only for the journal-facing supplementary package. Hashes identify the recorded bytes used in the analysis; this manifest does not grant redistribution rights.",
+  "sources": [
+    {
+      "case": "TabArena",
+      "upstream_project": "https://github.com/autogluon/tabarena",
+      "artifact_locator": "https://huggingface.co/datasets/TabArena/benchmark_results",
+      "known_upstream_license": "CC-BY-4.0 for the benchmark-results dataset record; repository terms tracked separately",
+      "submission_treatment": "retrieval/reference only unless a file is author-created or clearly redistributable under its own terms"
+    },
+    {
+      "case": "BenchPress",
+      "upstream_project": "https://github.com/microsoft/benchpress",
+      "artifact_locator": "official BenchPress public score-matrix release referenced by the project",
+      "known_upstream_license": "MIT for code; CDLA-Permissive-2.0 for the published score-matrix data per the project README",
+      "submission_treatment": "do not relicense upstream data; journal supplement carries author-created derived material and provenance instructions"
+    },
+    {
+      "case": "BeyondArena",
+      "upstream_project": "https://github.com/autogluon/tabarena",
+      "artifact_locator": "official BeyondArena/TabArena artifact registry used for acquisition; exact per-file download URLs were not preserved in the retained record",
+      "known_upstream_license": "artifact-level redistribution not treated as established by a repository-level license",
+      "submission_treatment": "RETRIEVAL_ONLY_PENDING_ARTIFACT_LEVEL_CONFIRMATION",
+      "recorded_artifact_identities": [
+        {
+          "path": "BeyondArena_core_tasks.csv",
+          "bytes": 20186,
+          "sha256": "392e26fbe00c863ee5b8910873783a17471d2c9f6fcefe333c43be4be65b635d"
+        },
+        {
+          "path": "BeyondArena_tasks_metadata.csv",
+          "bytes": 1519910,
+          "sha256": "04b46ef37647298991e380f972fab190ed0a26a43dbc2699f10c735cd72816fc"
+        },
+        {
+          "path": "CatBoost/hpo_results.parquet",
+          "bytes": 484639,
+          "sha256": "998b26e1416fd3b783784100a9b3c0556e4d6b048518c7355ac6f12b1fcadbcb"
+        },
+        {
+          "path": "ExtraTrees/hpo_results.parquet",
+          "bytes": 485605,
+          "sha256": "d278a9ba3d67965cb4f955fcd63a9b4dfc380eab9076d7a6730df32b25b2a4e4"
+        },
+        {
+          "path": "LightGBM/hpo_results.parquet",
+          "bytes": 482703,
+          "sha256": "4871b56c2c0812a8e2e4ccc0eca6a7323c0cbb6b4b732486764d4a6c6152f25d"
+        },
+        {
+          "path": "LinearModel/hpo_results.parquet",
+          "bytes": 491236,
+          "sha256": "0fd9dd22cc0fc58c7eb262f8e223bc641f37f0ec8a826d6e5b78c1a4bf263cd4"
+        },
+        {
+          "path": "RandomForest/hpo_results.parquet",
+          "bytes": 472970,
+          "sha256": "adc52ee4c41be4b4912740992af02ae494ed0d2dbe0632c817be6418b84b7b1e"
+        },
+        {
+          "path": "TA-RealMLP/hpo_results.parquet",
+          "bytes": 494791,
+          "sha256": "41941e238a4d913e761cfcd07c9585354a971f3135e204c68a03ad3ed921f7f8"
+        },
+        {
+          "path": "TA-TabDPT/hpo_results.parquet",
+          "bytes": 181846,
+          "sha256": "ceccd1a3d47613d0383f7cd496c64cdcafe4dff9c86b85b89b038fe44ba4588b"
+        },
+        {
+          "path": "TA-TabICLv2/hpo_results.parquet",
+          "bytes": 182863,
+          "sha256": "f327987e20c462dea406e9788b60a9598e12503549a8520d262661e7c0869a1a"
+        },
+        {
+          "path": "TA-TabM/hpo_results.parquet",
+          "bytes": 488790,
+          "sha256": "051be9859f422a1481193b32a978d4607a2d1b431ade175bf539d84e6ac535ed"
+        },
+        {
+          "path": "TA-TabPFN-2.6/hpo_results.parquet",
+          "bytes": 178908,
+          "sha256": "c20d0c228e0916dc20562018d29faabfdf39017c5d0dff0619a15ea5436c9885"
+        },
+        {
+          "path": "TA-TabPFN-3/hpo_results.parquet",
+          "bytes": 182390,
+          "sha256": "8911206461997edeee8e2c78f15a5d20e2c5be1bf28c33c6f8728ec359118c5e"
+        },
+        {
+          "path": "XGBoost/hpo_results.parquet",
+          "bytes": 477111,
+          "sha256": "ec58358b2930b3bb2ae4a063e4196ecff554fdb07525e4d457599426428b9abd"
+        }
+      ]
+    }
+  ]
+}

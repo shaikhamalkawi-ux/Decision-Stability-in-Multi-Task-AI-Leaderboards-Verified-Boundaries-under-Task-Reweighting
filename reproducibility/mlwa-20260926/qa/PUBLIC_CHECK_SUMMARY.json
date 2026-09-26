@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "release_version": "v0.8.1-mlwa-r2.20260926",
+  "scope": "Derived-matrix recomputation, independent unit tests and archived primal-dual witness checks; no raw reconstruction or full experiment rerun.",
+  "checks": {
+    "three_primary_cases": true,
+    "109_pairwise_cases": true,
+    "14_global_cases": true,
+    "matrix_only_scope": true,
+    "101_finite_pairwise_witnesses": true,
+    "14_global_witnesses": true,
+    "three_unit_tests": true,
+    "actual_complementarity_residuals_at_most_1e_8": true
+  },
+  "unit_tests_run": 3,
+  "randomized_pairwise_lp_comparisons_in_unit_test": 120,
+  "maximum_actual_complementarity_residual": 4.649058915617843e-16,
+  "unchanged_checker_threshold_note": "Archived checkers allow complementarity up to 10 times each record tolerance; this wrapper additionally tests actual residuals against 1e-8.",
+  "software_environment": {
+    "analysis_implementation_imported": false,
+    "raw_matrix_reconstruction_requested": false,
+    "pairwise_method": "ordered mass transfer",
+    "global_method": "independent scipy.optimize.linprog formulation",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.22631-SP0",
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "scipy": "1.18.1",
+    "audit_tolerance": 5e-08,
+    "tie_tolerance": 1e-12
+  },
+  "reference_inputs_and_results_modified": false
+}

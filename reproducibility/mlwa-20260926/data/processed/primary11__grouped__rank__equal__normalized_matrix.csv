@@ -1,0 +1,15 @@
+task,LR (tuned + ensemble),RF (tuned + ensemble),XT (tuned + ensemble),CAT (tuned + ensemble),GBM (tuned + ensemble),XGB (tuned + ensemble),TA-REALMLP (tuned + ensemble),TA-TABM (tuned + ensemble),TA-TABDPT (default),TA-TABPFN-2.6 (default),TA-TABICLv2 (default)
+5g_energy_consumption-10eca1f7da02,1.0,0.8,0.7,0.4,0.3,0.2,0.1,0.0,0.9,0.5,0.6
+asp_potassco_classification-6cbac33e4d1f,1.0,0.5,0.6,0.4,0.8,0.7,0.2,0.3,0.9,0.1,0.0
+cardiotocography-172ef52f9a1b,1.0,0.3,0.5,0.0,0.1,0.2,0.4,0.7,0.9,0.8,0.6
+dementia_prediction-d8ce15bd8d63,0.1,0.6,0.2,0.3,0.4,0.8,0.0,0.5,1.0,0.7,0.9
+early_learning_predictors-90d92cf6004c,1.0,0.8,0.7,0.1,0.0,0.5,0.2,0.4,0.9,0.3,0.6
+mice_protein_trisomy_discriminant-14c7a0eb99a0,0.9,0.6,0.3,0.8,0.7,1.0,0.2,0.1,0.4,0.5,0.0
+micro_mass-5deb16d4fa0e,0.0,0.7,0.8,0.3,0.5,0.9,0.6,0.1,1.0,0.2,0.4
+musk-16dca0dbddf5,0.9,0.8,0.4,1.0,0.3,0.5,0.2,0.1,0.7,0.6,0.0
+pancreatic_cancer_mouse_detection-bebbbfb72cb4,0.2,0.8,0.4,0.6,0.7,0.9,0.3,0.5,0.0,0.1,1.0
+parkinsons_biomedical_voice_measurements-44c2da69ace1,1.0,0.7,0.1,0.4,0.3,0.8,0.0,0.2,0.9,0.5,0.6
+sat11_hand_algo_runtime-cda3af888024,1.0,0.7,0.2,0.3,0.1,0.5,0.6,0.4,0.9,0.0,0.8
+telemonitoring_parkinsons_biomedical_voi-c608f1a3d898,0.7,0.6,0.3,0.0,0.1,0.2,0.4,0.5,0.9,1.0,0.8
+video_game_fps_prediction-af230e95b2ad,1.0,0.9,0.8,0.3,0.1,0.7,0.0,0.2,0.5,0.6,0.4
+video_transcoding_time_prediction-1aa8b8149615,1.0,0.6,0.4,0.1,0.3,0.5,0.0,0.2,0.9,0.8,0.7
