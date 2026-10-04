@@ -1,0 +1,10 @@
+check,value,status
+four_task_nonuniform_obstruction,verified,PASS
+uniform_68_task_obstruction,verified,PASS
+canonical_states,65780,PASS
+ordered_support_comparisons,789360,PASS
+all_nonempty_uncertain_type_subsets,63,PASS
+candidate_completion_trials,1120,PASS
+candidate_support_comparisons,14560,PASS
+archived_completion_comparisons,364,PASS
+historical_beyondarena_12_25_percent,excluded,NOT_VERIFIED
