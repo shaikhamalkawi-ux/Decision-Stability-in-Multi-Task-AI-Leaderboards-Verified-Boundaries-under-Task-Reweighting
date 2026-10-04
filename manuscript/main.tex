@@ -2,7 +2,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{fontspec}
 \usepackage{amsmath,amssymb}
-\usepackage{graphicx}
+\usepackage{graphicx}\n\usepackage{tikz}
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{hyperref}
@@ -164,12 +164,7 @@ A challenger can tie the nominal winner while still being beaten by another meth
 
 The clearest example is RandomForest. It reaches the RealMLP pairwise boundary at 0.29758, yet its global feasible-winner radius is 0.50561, a gap of 0.20804 before rounding. XGBoost similarly has pairwise radius 0.14542 and global-entry radius 0.22540. KNN cannot be a global winner for any admissible task-weight vector because it is strictly dominated task-wise. These cases show why a pairwise robustness number cannot generally substitute for an all-competitor feasibility analysis; Figure 1 makes the separation explicit.
 
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.92\linewidth]{CERT_Bench_Figure1_Pairwise_vs_Global_DSR_R6_20261004.pdf}
-\caption{Pairwise versus global feasible-winner decision-stability radii for two TabArena challengers. Global feasibility can require additional task-weight redistribution beyond pairwise contact with the nominal winner. Endpoint labels are rounded; gap annotations use the stored full-precision radii.}
-\label{fig:pairwise-global}
-\end{figure}
+\input{figure1_pairwise_vs_global.tex}
 
 \subsection{Full-suite aggregation can conceal regime-specific reversals}
 
