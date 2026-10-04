@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite the associated manuscript."
+title: "Beyond Rank: Decision-Stability Radii for Multi-Task AI Leaderboards under Task Reweighting"
+type: software
+authors:
+  - family-names: "Malkawi"
+    given-names: "Ghassan"
+repository-code: "https://github.com/shaikhamalkawi-ux/Decision-Stability-in-Multi-Task-AI-Leaderboards-Verified-Boundaries-under-Task-Reweighting"
+keywords:
+  - AI benchmarking
+  - leaderboard stability
+  - decision stability
+  - task reweighting
+  - sensitivity analysis
