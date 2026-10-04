@@ -31,6 +31,7 @@ A central TabArena example is RandomForest: pairwise access to RealMLP occurs at
 ## Repository contents
 
 - `manuscript/main.tex` — current single-author manuscript source.
+- `manuscript/figure1_dsr_concept.tex`, `figure2_pairwise_vs_global.tex`, `figure3_beyondarena_regimes.tex` — publication figure sources.
 - `supplement/supplement.tex` — current supplementary source.
 - `data/evidence_states.csv` — declared benchmark scopes used in the paper.
 - `results/primary_results.csv` — primary reported DSR values.
