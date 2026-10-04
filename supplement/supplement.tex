@@ -1,0 +1,121 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{hyperref}
+\setmainfont{TeX Gyre Termes}
+\title{Supplementary Material\\Beyond Rank: Decision-Stability Radii for Multi-Task AI Leaderboards under Task Reweighting}
+\author{Ghassan Malkawi}
+\date{}
+\begin{document}
+\maketitle
+
+\section*{Scope of this supplement}
+This supplement provides verification and reproducibility details for the main manuscript. It does not introduce a new estimand or additional empirical benchmark result.
+
+\section{Primal--dual and independent calculation checks}
+For a fixed nominal winner $i$ and competitor $j$, let $g_{ij}=z_j-z_i$. The pairwise boundary problem can be written as
+\begin{align}
+\min_{w,u}\quad & \frac12\sum_{d=1}^{D}u_d\\
+\text{s.t.}\quad & \sum_{d=1}^{D}w_d=1,\qquad w_d\ge0,\\
+& w_d-w_d^0\le u_d,\qquad w_d^0-w_d\le u_d,\\
+& \sum_{d=1}^{D}w_d g_{ij,d}\le0.
+\end{align}
+The auxiliary variables $u_d\ge0$ linearize $|w_d-w_d^0|$. The final inequality is exactly the pairwise condition $S_j(w)\le S_i(w)$.
+
+A convenient dual uses $\alpha,\beta\in\mathbb{R}_+^D$ for the two absolute-deviation inequalities, $\lambda\ge0$ for the pairwise boundary, $\nu\in\mathbb{R}$ for the simplex equality, and $\mathbf{1}$ for the all-ones $D$-vector:
+\begin{align}
+\max_{\alpha,\beta,\lambda,\nu}\quad &
+\nu+(w^0)^\top(\beta-\alpha)\\
+\text{s.t.}\quad &
+-\alpha+\beta-\lambda g_{ij}+\nu\mathbf{1}\le0,\\
+& \alpha+\beta\le\frac12\mathbf{1},\qquad
+\alpha,\beta,\lambda\ge0.
+\end{align}
+These dual variables are verification quantities rather than additional model parameters. At an optimum, primal and dual objectives agree and the corresponding complementary products vanish within the declared numerical tolerances.
+
+The independent checker recomputes every primal constraint and objective from the stored arrays and verifies the dual constraints, primal--dual objective agreement, and complementary products. The global feasible-winner checker adds one competitor inequality and complementary product for every admitted method. Infinite radii are recorded with an explicit infeasibility reason.
+
+As a separate calculation path, an ordered mass-transfer implementation solves the same pairwise total-variation problem by reallocating task-weight mass in the order induced by the fixed task-wise score-gap vector until the weighted gap reaches the boundary. It does not call the LP analysis path. Across 6,402 finite random validation problems, there were no feasibility mismatches and the largest absolute LP--transfer difference was $1.14\times10^{-13}$.
+
+A separately written replication path reconstructed the three primary matrices from the archived artifacts using the declared source rules, complete-case rules, score directions, and no-imputation rules. It recomputed all 109 winner-versus-competitor cases (101 finite and eight infeasible) and all 14 TabArena global-entry cases. The largest absolute pairwise-radius difference was $3.00\times10^{-15}$ and the largest finite global-entry difference was $3.33\times10^{-16}$.
+
+\section{TabArena global feasible-winner entries}
+Table~\ref{tab:global} reports the TabArena global entry radii together with the pairwise lower bounds against the nominal winner. The difference column quantifies how much additional task-weight redistribution is required after pairwise contact before the candidate can attain the minimum aggregate loss against the full admitted field.
+
+\begin{table}[htbp]
+\centering
+\caption{TabArena global feasible-winner entry radii and pairwise lower bounds. Differences use stored full-precision radii; displayed endpoints are rounded.}
+\label{tab:global}
+\small
+\begin{tabular}{lrrr}
+\toprule
+Method & Global entry & Pairwise boundary & Difference\\
+\midrule
+LightGBM & 0.03660 & 0.03660 & 0.00000\\
+TabM & 0.03922 & 0.03922 & 0.00000\\
+CatBoost & 0.10071 & 0.09091 & 0.00980\\
+ModernNCA & 0.13608 & 0.13575 & 0.00034\\
+XGBoost & 0.22540 & 0.14542 & 0.07998\\
+TabDPT & 0.22861 & 0.21569 & 0.01293\\
+FastAI & 0.32598 & 0.30920 & 0.01678\\
+EBM & 0.32922 & 0.23660 & 0.09262\\
+NN-Torch & 0.34887 & 0.27273 & 0.07614\\
+ExtraTrees & 0.40629 & 0.30952 & 0.09677\\
+RandomForest & 0.50561 & 0.29758 & 0.20804\\
+Linear & 0.64611 & 0.52036 & 0.12575\\
+KNN & $+\infty$ & $+\infty$ & --\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Witness-count trace}
+Table~\ref{tab:witness} records the scope-by-scope finite and infeasible pairwise cases in the verification record. Matrix labels follow tasks $\times$ methods. The final column counts finite cases whose stored witness satisfied the independent verification checks.
+
+\begin{table}[htbp]
+\centering
+\caption{Scope-by-scope pairwise verification counts.}
+\label{tab:witness}
+\small
+\begin{tabular}{lrrrr}
+\toprule
+Case & Candidate pairs & Finite & Infeasible & Verified finite cases\\
+\midrule
+BenchPress primary ($11\times10$) & 9 & 5 & 4 & 5\\
+BeyondArena $142\times9$ & 8 & 8 & 0 & 8\\
+BeyondArena $122\times9$ & 8 & 8 & 0 & 8\\
+BeyondArena living $122\times12$ & 11 & 11 & 0 & 11\\
+BeyondArena $122\times11$ min--max & 10 & 10 & 0 & 10\\
+BeyondArena $122\times11$ primary & 10 & 10 & 0 & 10\\
+BeyondArena regime-balanced & 10 & 10 & 0 & 10\\
+BeyondArena grouped & 10 & 10 & 0 & 10\\
+BeyondArena IID & 10 & 10 & 0 & 10\\
+BeyondArena temporal & 10 & 7 & 3 & 7\\
+TabArena primary ($51\times14$) & 13 & 12 & 1 & 12\\
+\midrule
+Total & 109 & 101 & 8 & 101\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Computational profile and verification summary}
+The primary TabArena case has $D=51$ tasks and $M=14$ methods; its 13 pairwise candidate problems contain 12 finite boundaries and one infeasible case. BenchPress has $D=11$ and $M=10$, with five finite and four infeasible pairwise candidate cases. BeyondArena has $D=122$ and $M=11$, with ten finite pairwise candidate cases.
+
+The validation set contains 6,800 random candidate problems, of which 6,402 are finite and 398 infeasible. Runtime values are not reported because they depend on the execution environment and are not scientific outcomes.
+
+The verification record contains 101 finite pairwise cases that satisfy the independent checks and 14 TabArena global feasible-winner cases that satisfy the corresponding all-competitor checks.
+
+\section{Reproducibility and evidence boundary}
+The main analyses use public benchmark evidence from TabArena, BenchPress, and BeyondArena under the evidence states declared in the manuscript. Primary analyses do not impute missing benchmark cells. The public project repository contains the current manuscript and supplementary sources plus machine-readable evidence-state and result summaries: \url{https://github.com/shaikhamalkawi-ux/Decision-Stability-in-Multi-Task-AI-Leaderboards-Verified-Boundaries-under-Task-Reweighting}.
+
+Third-party raw artifacts are not redistributed when redistribution status is unclear. The reproducibility record instead preserves source identities, retrieval metadata, admission rules, and derived analysis states. The reported radii remain conditional on the admitted score matrix, candidate and task scope, score transformation, nominal weights, and tie semantics.
+
+The verification procedures establish numerical agreement to the stated floating-point tolerances. They do not constitute formal proof-assistant verification or a claim that the analyzed benchmark evidence is universally representative.
+
+\section*{Supplement-to-main-manuscript boundary}
+The main manuscript reports the scientific question, definitions, three benchmark findings, and the verification summary needed for interpretation. This supplement provides the detailed witness and scope traces needed for reproducibility without adding scientific claims beyond the main manuscript.
+
+\end{document}
+
