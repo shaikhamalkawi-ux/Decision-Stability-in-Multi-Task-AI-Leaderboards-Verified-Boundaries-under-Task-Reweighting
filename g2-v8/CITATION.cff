@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use these reproducibility materials, please cite the associated manuscript."
+title: "Diagnosing Unresolved ML Leaderboards: Evidence Ambiguity versus Certificate Failure under Task Reweighting — Reproducibility Materials"
+type: software
+authors:
+  - family-names: "Malkawi"
+    given-names: "Ghassan"
+repository-code: "https://github.com/shaikhamalkawi-ux/Decision-Stability-in-Multi-Task-AI-Leaderboards-Verified-Boundaries-under-Task-Reweighting/tree/main/g2-v8"
+keywords:
+  - machine learning evaluation
+  - leaderboards
+  - incomplete benchmarks
+  - task reweighting
+  - decision certificates
+  - reproducibility
