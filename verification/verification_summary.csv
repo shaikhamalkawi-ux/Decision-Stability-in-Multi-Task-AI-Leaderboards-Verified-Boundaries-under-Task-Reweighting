@@ -1,0 +1,7 @@
+metric,value
+winner_vs_competitor_cases,109
+finite_pairwise_witnesses_passing_independent_checks,101
+infeasible_pairwise_cases,8
+tabarena_global_feasible_winner_cases_passing_checks,14
+finite_random_validation_problems,6402
+max_absolute_lp_transfer_discrepancy,1.14e-13
