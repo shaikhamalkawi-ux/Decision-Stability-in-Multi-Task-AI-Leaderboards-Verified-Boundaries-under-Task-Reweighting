@@ -2,7 +2,8 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{fontspec}
 \usepackage{amsmath,amssymb}
-\usepackage{graphicx}\n\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{tikz}
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{hyperref}
@@ -78,6 +79,10 @@ To quantify how far the declared aggregation is from a specified decision change
 \end{equation}
 where $\lVert\cdot\rVert_1$ is the $L_1$ norm. Because $w$ and $w^0$ are probability vectors, DSR lies in $[0,1]$ and equals the task-weight mass reallocated from the nominal baseline. DSR $=0$ means the boundary is already reached; larger values mean more redistribution is required for that decision event.
 
+Figure~\ref{fig:dsr-concept} summarizes the estimand: DSR moves only task weights while the admitted score matrix and evidence state remain fixed.
+
+\input{figure1_dsr_concept.tex}
+
 To ask when nominal winner $i$ can first be tied or beaten by competitor $j$, define the task-wise loss gap $g_{ij}=z_j-z_i$ and
 \begin{equation}
 \rho_{i\rightarrow j}=
@@ -116,7 +121,7 @@ To compute these boundaries without changing the score matrix, the absolute devi
 
 The reported LP calculations use SciPy with the HiGHS backend (Huangfu \& Hall, 2018; Virtanen et al., 2020).
 
-The verification record contains 109 winner-versus-competitor cases across the reported scopes. Of these, 101 finite pairwise witnesses pass an independent checker; the remaining infeasible cases have explicit reasons. All 14 TabArena global feasible-winner cases pass independent checks, including one strict-dominance infeasibility certificate. An independently written ordered mass-transfer implementation agrees with the defining pairwise LP on 6,402 finite random validation problems, with a maximum absolute discrepancy of 1.14 × 10⁻¹³. These checks verify the numerical implementation to declared floating-point tolerances; they are not a formal proof over exact arithmetic. Supplementary Sections S1–S4 provide the detailed witness and scope traces.
+The verification record contains 109 winner-versus-competitor cases across the reported scopes. Of these, 101 finite pairwise witnesses satisfy independent numerical checks; the remaining infeasible cases have explicit reasons. All 14 TabArena global feasible-winner cases satisfy the corresponding all-competitor checks, including one strict-dominance infeasibility certificate. An independently written ordered mass-transfer implementation agrees with the defining pairwise LP on 6,402 finite random validation problems, with a maximum absolute discrepancy of 1.14 × 10⁻¹³. These checks verify the numerical implementation to declared floating-point tolerances; they are not a formal proof over exact arithmetic. Supplementary Sections S1–S4 provide the detailed witness and scope traces.
 
 \subsection{Public benchmark evidence}
 
@@ -162,15 +167,19 @@ Shortlist stability differs again. The top-3 possible-entry radius is 0.02832244
 
 A challenger can tie the nominal winner while still being beaten by another method. In TabArena, LightGBM and TabM become globally feasible at their pairwise boundaries, but several later candidates require additional task-weight movement.
 
-The clearest example is RandomForest. It reaches the RealMLP pairwise boundary at 0.29758, yet its global feasible-winner radius is 0.50561, a gap of 0.20804 before rounding. XGBoost similarly has pairwise radius 0.14542 and global-entry radius 0.22540. KNN cannot be a global winner for any admissible task-weight vector because it is strictly dominated task-wise. These cases show why a pairwise robustness number cannot generally substitute for an all-competitor feasibility analysis; Figure 1 makes the separation explicit.
+The clearest example is RandomForest. It reaches the RealMLP pairwise boundary at 0.29758, yet its global feasible-winner radius is 0.50561, a gap of 0.20804 before rounding. XGBoost similarly has pairwise radius 0.14542 and global-entry radius 0.22540. KNN cannot be a global winner for any admissible task-weight vector because it is strictly dominated task-wise. These cases show why a pairwise robustness number cannot generally substitute for an all-competitor feasibility analysis; Figure~\ref{fig:pairwise-global} makes the separation explicit.
 
-\input{figure1_pairwise_vs_global.tex}
+\input{figure2_pairwise_vs_global.tex}
 
 \subsection{Full-suite aggregation can conceal regime-specific reversals}
 
 For the fixed 11-model, 122-dataset BeyondArena analysis, TabPFN-2.6 is the equal-dataset winner and TabICLv2 is the nearest challenger; the top-1 DSR is 0.0186703097.
 
 The winner is not common across the published task regimes. On the 97 IID datasets, TabICLv2 is the aggregate winner with top-1 DSR 0.0057274. On the 11 temporal datasets, TabPFN-2.6 wins with DSR 0.102273. On the 14 grouped datasets, RealMLP wins with DSR 0.0714286. A regime-balanced baseline assigning one-third of total task weight to each regime changes the all-dataset winner to RealMLP and yields top-1 DSR 0.0051179.
+
+Figure~\ref{fig:beyond-regimes} summarizes the regime dependence: both the winner identity and the top-1 DSR change across the full-suite, IID, temporal, grouped, and regime-balanced analyses.
+
+\input{figure3_beyondarena_regimes.tex}
 
 These results do not imply that one regime is the correct benchmark. They show that a full-suite winner is conditional on the distribution of task mass across structurally different evaluation regimes.
 
@@ -200,7 +209,7 @@ The analysis is conditional on fixed observed score matrices. It does not model 
 
 Task-wise rank normalization makes heterogeneous metrics comparable but discards cardinal performance magnitude and depends on the candidate pool. We therefore fix candidate scope before ranking and treat min-max normalization only as a sensitivity analysis. Adding or removing a model can change normalized ranks even when retained raw scores do not change.
 
-No-imputation protects the distinction between observed and predicted evidence, but complete-case analysis can be selective. This is particularly important for BenchPress and BeyondArena. The controlled scope analyses expose this dependence but do not make missingness ignorable.
+No-imputation protects the distinction between observed and predicted evidence, but complete-case analysis can be selective. This is particularly important for BenchPress and BeyondArena. The declared scope-sensitivity analyses expose this dependence but do not make missingness ignorable.
 
 Radii from different benchmark matrices should not be read as a universal league table of benchmark robustness. A DSR is conditional on the task set, candidate set, transformation, nominal weights, and tie semantics of its evidence state.
 
