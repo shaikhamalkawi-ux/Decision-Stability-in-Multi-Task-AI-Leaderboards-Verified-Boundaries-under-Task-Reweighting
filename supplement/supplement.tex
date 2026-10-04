@@ -36,7 +36,7 @@ A convenient dual uses $\alpha,\beta\in\mathbb{R}_+^D$ for the two absolute-devi
 \end{align}
 These dual variables are verification quantities rather than additional model parameters. At an optimum, primal and dual objectives agree and the corresponding complementary products vanish within the declared numerical tolerances.
 
-The independent checker recomputes every primal constraint and objective from the stored arrays and verifies the dual constraints, primal--dual objective agreement, and complementary products. The global feasible-winner checker adds one competitor inequality and complementary product for every admitted method. Infinite radii are recorded with an explicit infeasibility reason.
+An independent verification routine recomputes every primal constraint and objective from the stored arrays and verifies the dual constraints, primal--dual objective agreement, and complementary products. The global feasible-winner checker adds one competitor inequality and complementary product for every admitted method. Infinite radii are recorded with an explicit infeasibility reason.
 
 As a separate calculation path, an ordered mass-transfer implementation solves the same pairwise total-variation problem by reallocating task-weight mass in the order induced by the fixed task-wise score-gap vector until the weighted gap reaches the boundary. It does not call the LP analysis path. Across 6,402 finite random validation problems, there were no feasibility mismatches and the largest absolute LP--transfer difference was $1.14\times10^{-13}$.
 
