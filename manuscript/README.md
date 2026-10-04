@@ -1,13 +1,10 @@
 # Manuscript
 
-Store anonymous review manuscript source and related journal-facing files here only after repository visibility/anonymity has been checked.
+The current journal-facing source is `main.tex`.
 
-Do not store:
-- author names or biographies,
-- ORCIDs,
-- private emails,
-- funding details that reveal identity,
-- internal reviewer correspondence,
-- private submission credentials.
+**Title:** Beyond Rank: Decision-Stability Radii for Multi-Task AI Leaderboards under Task Reweighting  
+**Author:** Ghassan Malkawi
 
-Keep finding-first narrative and scientific claims synchronized with verified outputs.
+The repository is public and the current JART submission uses single-blind review, so the manuscript source is not anonymized.
+
+Scientific claims and numerical results must remain synchronized with the machine-readable summaries in `../results/` and `../verification/`.
