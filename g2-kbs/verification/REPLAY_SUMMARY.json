@@ -1,0 +1,14 @@
+{
+  "four_task": {
+    "average_A_supports": ["-11/40800", "-29/5100", "-11/40800"],
+    "legal_rank_patterns": 6
+  },
+  "uniform68": {
+    "average_A_supports": ["-11/40800", "-29/5100", "-11/40800"],
+    "exceptional_type_subsets": 8,
+    "ordered_pair_supports": 789360,
+    "semantic_no_common_weak": 65780,
+    "states": 65780,
+    "type_subsets": 63
+  }
+}
