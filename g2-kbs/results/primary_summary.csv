@@ -6,6 +6,7 @@ traces,80,fixed overlapping disclosure traces
 checkpoints,480,tested sampled checkpoints
 sampled_disclosure_savings,0,tested certificate strengthening
 information_limited_prefixes,47,of 80 immediate pre-stopping prefixes
+conditional_fixed_trace_Q_matches,47,all verified predecessor witnesses have qualified Q lower-upper match
 inconclusive_prefixes,33,failed witness search does not imply agreement
 witnesses_epsilon_2_over_51,39,of 40 traces
 witnesses_epsilon_4_over_51,8,of 40 traces
