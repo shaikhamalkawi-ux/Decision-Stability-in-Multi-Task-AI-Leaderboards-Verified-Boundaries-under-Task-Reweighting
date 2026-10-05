@@ -11,11 +11,11 @@ Publication-facing reproducibility materials for the Knowledge-Based Systems sub
 The paper distinguishes four logically different outcomes for partial benchmark evidence:
 
 1. **Information-limited** — verified compatible completions yield opposite decisions.
-2. **Certificate-limited** — the decision is proved fixed, but the declared certificate fails.
+2. **Certificate-limited** — the decision is proved fixed **and nonexistence of a valid certificate in the declared family is proved**.
 3. **Certified/resolved** — the declared certificate establishes the fixed decision.
-4. **Inconclusive** — neither information limitation nor semantic determination is proved.
+4. **Inconclusive** — ambiguity, semantic determination, or certificate existence remains undecided.
 
-This separation is sound by construction: a failed witness search is never treated as evidence that compatible completions agree.
+A failed witness search is never treated as evidence that compatible completions agree, and a failed/incomplete certificate search is never treated as proof that no certificate exists.
 
 ## Locked reported results
 
@@ -35,17 +35,24 @@ This separation is sound by construction: a failed witness search is never treat
 - 14,560 candidate support comparisons;
 - 364 archived-completion comparisons.
 
-## Boundaries
+## Reviewer-auditable theory materials
+
+- `proofs/PUBLIC_EXACT_PROOF.md` — explicit four-task and uniform-68 derivations.
+- `code/replay_exact_obstructions.py` — self-contained exact-rational replay.
+- `verification/REPLAY_SUMMARY.json` — expected replay output.
+
+These theory files use only synthetic data and Python standard-library exact arithmetic.
+
+## Empirical-data boundary
 
 The trace counts are descriptive and are not population estimates. Logical completions are defined by the declared numerical domains and are not claimed to be realizable by retraining the named methods. The zero-savings result applies only to the tested certificate strengthening and sampled checkpoints.
 
+Third-party TabArena raw benchmark artifacts are not redistributed where rights are unclear. The repository records the admitted task/method scope and source-identification information needed for source-faithful reconstruction.
 
 ## Final figure-generation entry points
 
-For the KBS pre-submission package, use these scripts:
-
-- `code/reproduce_graphical_abstract_v11r2.py` — final graphical abstract.
+- `code/reproduce_graphical_abstract_v11r2.py` — graphical abstract.
 - `code/reproduce_supplementary_figure_s1_v11r2.py` — Supplementary Figure S1.
-- `code/reproduce_all_figures_v11.py` and earlier figure scripts are retained as development lineage and are not the final submission entry points.
+- Earlier figure scripts are retained only as development lineage.
 
 The final graphical abstract is generated programmatically with matplotlib; it is not produced by a general-purpose generative-image model.
