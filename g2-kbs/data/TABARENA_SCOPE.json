@@ -1,0 +1,31 @@
+{
+  "tasks": [
+    "APSFailure","Amazon_employee_access","Another-Dataset-on-used-Fiat-500","Bank_Customer_Churn","Bioresponse",
+    "Diabetes130US","E-CommereShippingData","Fitness_Club","Food_Delivery_Time","GiveMeSomeCredit",
+    "HR_Analytics_Job_Change_of_Data_Scientists","Is-this-a-good-customer","MIC","Marketing_Campaign","NATICUSdroid",
+    "QSAR-TID-11","QSAR_fish_toxicity","SDSS17","airfoil_self_noise","anneal","bank-marketing",
+    "blood-transfusion-service-center","churn","coil2000_insurance_policies","concrete_compressive_strength","credit-g",
+    "credit_card_clients_default","customer_satisfaction_in_airline","diabetes","diamonds","hazelnut-spread-contaminant-detection",
+    "healthcare_insurance_expenses","heloc","hiva_agnostic","houses","in_vehicle_coupon_recommendation","jm1",
+    "kddcup09_appetency","maternal_health_risk","miami_housing","online_shoppers_intention","physiochemical_protein",
+    "polish_companies_bankruptcy","qsar-biodeg","seismic-bumps","splice","students_dropout_and_academic_success",
+    "superconductivity","taiwanese_bankruptcy_prediction","website_phishing","wine_quality"
+  ],
+  "methods": [
+    "CAT (tuned + ensemble)","EBM (tuned + ensemble)","FASTAI (tuned + ensemble)","GBM (tuned + ensemble)",
+    "KNN (tuned + ensemble)","LR (tuned + ensemble)","MNCA (tuned + ensemble)","NN_TORCH (tuned + ensemble)",
+    "REALMLP (tuned + ensemble)","RF (tuned + ensemble)","TABDPT (default)","TABM (tuned + ensemble)",
+    "XGB (tuned + ensemble)","XT (tuned + ensemble)"
+  ],
+  "task_count": 51,
+  "method_count": 14,
+  "paired_fold_vector_count": 816,
+  "tv_units_over_51": [2,4],
+  "trace_count": 80,
+  "row_denominator": 26,
+  "support_denominator": 1326,
+  "source_transcript_sha256": "feddd565bc543dbc34dba2f19853c74f0ba030da55a3dab9a948f920563b3564",
+  "source_fold_csv_sha256": "8f06784d4a4b2f2449f28eec229b50b558832fd914384671df7e9a3a865d36dc",
+  "source_checkpoint_sha256": "a02a7077feb527498325a85fd09ffaba4dc13a6104a0a9f726cd3527fa83694f",
+  "scope": "Constructive sufficient ambiguity witnesses under independent domain constraints; failed witness search is inconclusive."
+}
