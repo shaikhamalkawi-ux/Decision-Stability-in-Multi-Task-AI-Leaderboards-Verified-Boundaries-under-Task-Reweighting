@@ -38,3 +38,14 @@ This separation is sound by construction: a failed witness search is never treat
 ## Boundaries
 
 The trace counts are descriptive and are not population estimates. Logical completions are defined by the declared numerical domains and are not claimed to be realizable by retraining the named methods. The zero-savings result applies only to the tested certificate strengthening and sampled checkpoints.
+
+
+## Final figure-generation entry points
+
+For the KBS pre-submission package, use these scripts:
+
+- `code/reproduce_graphical_abstract_v11r2.py` — final graphical abstract.
+- `code/reproduce_supplementary_figure_s1_v11r2.py` — Supplementary Figure S1.
+- `code/reproduce_all_figures_v11.py` and earlier figure scripts are retained as development lineage and are not the final submission entry points.
+
+The final graphical abstract is generated programmatically with matplotlib; it is not produced by a general-purpose generative-image model.
