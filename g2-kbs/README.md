@@ -57,8 +57,9 @@ Third-party TabArena raw benchmark artifacts are not redistributed where rights 
 
 ## Final figure-generation entry points
 
-- `code/reproduce_graphical_abstract_v11r2.py` — graphical abstract.
+- `code/reproduce_graphical_abstract_v11r4.py` — current graphical abstract.
 - `code/reproduce_supplementary_figure_s1_v11r2.py` — Supplementary Figure S1.
+- `code/verify_fixed_trace_qstar.py` — fixed-trace decision-point verifier.
 - Earlier figure scripts are retained only as development lineage.
 
 The final graphical abstract is generated programmatically with matplotlib; it is not produced by a general-purpose generative-image model.
