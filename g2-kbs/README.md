@@ -28,6 +28,8 @@ A failed witness search is never treated as evidence that compatible completions
 - 480 sampled checkpoints;
 - zero sampled disclosure savings for the tested strengthening;
 - 47/80 information-limited immediate pre-stopping prefixes;
+- exact fixed-trace decision point q*=Q on those same 47 traces, from the Q-1 ambiguity witness plus the checked Q certificate;
+- Q range among the 47 exact decision points: 726–816 disclosures;
 - 39/40 at epsilon = 2/51;
 - 8/40 at epsilon = 4/51;
 - 33 traces remain inconclusive;
@@ -42,6 +44,10 @@ A failed witness search is never treated as evidence that compatible completions
 - `verification/REPLAY_SUMMARY.json` — expected replay output.
 
 These theory files use only synthetic data and Python standard-library exact arithmetic.
+
+## Fixed-trace decision-point audit
+
+For each of the 47 traces with a verified opposite-answer pair at Q-1, the accepted Phase-2/Phase-6 stopping certificate at Q establishes the same fixed decision over every compatible completion. The two evidence items are identity-matched across the frozen ledgers with 0 mismatches, so the first logically resolvable prefix along each of those fixed disclosure orders is exactly q*=Q. This is a fixed-order result, not an optimization over alternative disclosure orders.
 
 ## Empirical-data boundary
 
