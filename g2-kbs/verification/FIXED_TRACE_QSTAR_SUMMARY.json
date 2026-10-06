@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "records": 80,
+  "identity_mismatches": 0,
+  "qstar_equals_Q": 47,
+  "qstar_Q_min": 726,
+  "qstar_Q_median": 816,
+  "qstar_Q_max": 816,
+  "qualifications": [
+    "fixed disclosure order only",
+    "finite well-defined canonical targets",
+    "Q upper certificate retains numerical mean-enclosure qualification",
+    "not an optimization over alternative query orders"
+  ],
+  "source_sha256": {
+    "Phase2_FOLD_RUNS.csv": "8f06784d4a4b2f2449f28eec229b50b558832fd914384671df7e9a3a865d36dc",
+    "Phase6_TRACE_SUMMARY.json": "0765fd72f53d71edd0fe98c9cbb041ac83a2686602e72e182b86ce2571d8a12b",
+    "Phase8_TRACE_SUMMARY.json": "425b0fa2309b47f2afafe2482215515457184db98829eb436ad2bdad162d125c"
+  }
+}
