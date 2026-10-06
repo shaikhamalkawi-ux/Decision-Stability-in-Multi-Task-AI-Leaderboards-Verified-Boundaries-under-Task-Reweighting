@@ -5,6 +5,7 @@ This directory supports the KBS submission candidate.
 ## Public reviewer-facing materials
 - `theory/THEORY_PROOF_DETAILS.md` — analytical proof details for the fixed-joint-mixture obstruction.
 - Public result and verification summaries in the parent `g2-kbs` directory.
+- Fixed-trace decision-point audit: Q-1 opposite-answer witnesses are identity-matched to checked Q certificates; 47/80 traces satisfy q*=Q along their fixed disclosure orders.
 - Diagnostic procedure and provenance notes in the parent directory.
 
 ## Reviewer package supplied with the submission
